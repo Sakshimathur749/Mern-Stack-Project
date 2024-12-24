@@ -167,7 +167,7 @@ function Header() {
               </div>
             </div>
             <Link to="/getquotes" >
-            <div class="button"><a class="theme-btn1" href="/contact">Get A Quote <span><i class="bi bi-arrow-right"></i></span></a></div>
+            <div className="button"><a className="theme-btn1" href="/contact">Get A Quote <span><i className="bi bi-arrow-right"></i></span></a></div>
             </Link>
           </div>
           <Navbar.Toggle onClick={handleShow} />
