@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { Accordion, Offcanvas } from 'react-bootstrap';
 import './MediaQuerie.css';
 import { Link, useLocation } from 'react-router-dom';
+import "../index-CNfx030l.css";
 
 function Header() {
   const [show, setShow] = useState(false);
@@ -166,18 +167,7 @@ function Header() {
               </div>
             </div>
             <Link to="/getquotes" >
-            <Form className="button"  style={{ padding: "20px 10px" }}>
-              <Button
-                variant="outline-primary py-2"
-                style={{
-                  fontWeight: "500",
-                  backgroundColor: "#0E38B1",
-                  color: "#fff",
-                }} onClick={() => window.location.reload()}
-              >
-                  Get Quotes
-              </Button>
-            </Form>
+            <div class="button"><a class="theme-btn1" href="/contact">Get A Quote <span><i class="bi bi-arrow-right"></i></span></a></div>
             </Link>
           </div>
           <Navbar.Toggle onClick={handleShow} />
