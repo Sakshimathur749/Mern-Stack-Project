@@ -6,6 +6,7 @@ import "../index-CNfx030l.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom'
+import OurCompanyImage from '../assets//Image1.jpg'
 
 const Ourcompany = () => {
     return (
@@ -14,11 +15,14 @@ const Ourcompany = () => {
                 <Row className='rowgap'>
                     <Col xs='6' className='justify-align-center'>
                         <div className="about-image ">
-                            <div className="image-1">
+                            {/* <div className="image-1">
                                 <img src="https://techxen-react.vercel.app/assets/img/about/about1-img1.png" alt="" />
                             </div>
                             <div className="image-2 image-anime">
                                 <img src="https://techxen-react.vercel.app/assets/img/about/about1-img2.png" alt="" />
+                            </div> */}
+                            <div >
+                                <img src={OurCompanyImage} style={{marginTop:'80px'}} alt=""/>
                             </div>
                             <div className="icon-box">
                                 <img src="https://techxen-react.vercel.app/assets/img/icons/about1-shape-icon.png" alt="" />

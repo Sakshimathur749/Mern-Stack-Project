@@ -2,6 +2,11 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import './MediaQuerie.css';
 import "../index-CNfx030l.css";
+import Icon1 from '../assets/Icon/icon-DigitalCard-50.png'
+import Icon2 from '../assets/Icon/icon-Graphic-50.png'
+import Icon3 from '../assets/Icon/icon-App-50.png'
+import Icon4 from '../assets/Icon/icon-Ecom-50.png'
+import Icon5 from '../assets/Icon/icon-Web-50.png'
 
 const Services = () => {
     
@@ -28,7 +33,7 @@ const Services = () => {
                     <Col xs='6'>
                     <div className="single-box">
                             <div className="icon">
-                                <img src="	https://techxen-react.vercel.app/assets/img/icons/service-icon3.png" alt="" />
+                                <img src={Icon1} alt="" />
                             </div>
                             <div className="heading1">
                                 <h4><a href="/service/Digital-Card">Digital Card Services</a></h4>
@@ -42,7 +47,7 @@ const Services = () => {
                     <Col xs='6'>
                         <div className="single-box">
                             <div className="icon">
-                                <img src="	https://techxen-react.vercel.app/assets/img/icons/service-icon2.png" alt="" />
+                                <img src={Icon2} alt="" />
                             </div>
                             <div className="heading1">
                                 <h4><a href="/service/Graphic-Designing">Graphic Designing</a></h4>
@@ -55,7 +60,7 @@ const Services = () => {
                     </Col>
                     <Col xs='4'>
                     <div className="single-box">
-                        <div className="icon"><img src="https://techxen-react.vercel.app/assets/img/icons/service-icon1.png" alt=""/></div>
+                        <div className="icon"><img src={Icon3} alt=""/></div>
                             <div className="heading1">
                                 <h4><a href="/service/App-Development">App Development </a></h4>
                                 <div style={{ height: '16px' }}></div>
@@ -68,7 +73,7 @@ const Services = () => {
                     <Col xs='4'>
                         <div className="single-box">
                             <div className="icon">
-                                <img src="	https://techxen-react.vercel.app/assets/img/icons/service-icon4.png" alt="" />
+                                <img src={Icon4} alt="" />
                             </div>
                             <div className="heading1">
                                 <h4><a href="/service/E-commerce-Development">E-commerce Development</a></h4>
@@ -82,7 +87,7 @@ const Services = () => {
                     <Col xs='4'>
                         <div className="single-box">
                             <div className="icon">
-                                <img src="	https://techxen-react.vercel.app/assets/img/icons/service-icon2.png" alt="" />
+                                <img src={Icon5} alt="" />
                             </div>
                             <div className="heading1">
                                 <h4><a href="/service/Web-Development">Web Developnment</a></h4>

@@ -3,6 +3,7 @@ import "../index-CNfx030l.css";
 import "../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import Image1 from '../assets/Image6.png'
 
 const OurService = () => {
   return (
@@ -11,41 +12,11 @@ const OurService = () => {
         <div className="row align-items-center">
           <div className="col-lg-6  order-2 order-lg-1">
             <div className="about2-images">
-              <div
-                className="image1"
-                data-aos="zoom-in-right"
-                data-aos-duration="800"
-              >
-                <img
-                  src="https://techxen-react.vercel.app/assets/img/about/about2-img1.png"
-                  alt=""
-                />
-              </div>
               <div className="image2 image-anime">
                 <img
-                  src="https://techxen-react.vercel.app/assets/img/about/about2-img2.png"
+                  src={Image1}
                   alt=""
                 />
-              </div>
-              <div
-                className="image3"
-                data-aos="zoom-in-left"
-                data-aos-duration="900"
-              >
-                <img
-                  src="https://techxen-react.vercel.app/assets/img/about/about2-img3.png"
-                  alt=""
-                />
-              </div>
-              <div
-                className="counter-box"
-                data-aos="flip-left"
-                data-aos-duration="700"
-              >
-                <h3>25</h3>
-                <p>
-                  Years Of <br /> Experience
-                </p>
               </div>
             </div>
           </div>

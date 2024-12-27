@@ -1,6 +1,16 @@
 import React from "react";
 import "../index-CNfx030l.css";
 import { Link } from "react-router-dom";
+import Icon1 from '../assets/Icon/icon-Web.png'
+import Icon2 from '../assets/Icon/icon-Ecom.png'
+import Icon3 from '../assets/Icon/icon-Graphic.png'
+import Icon4 from '../assets/Icon/icon-Seo.png'
+import Icon5 from '../assets/Icon/icon-App.png'
+import Icon6 from '../assets/Icon/icon-Smm.png'
+import Icon7 from '../assets/Icon/icon-Amazon.png'
+import Icon8 from '../assets/Icon/icon-Data.png'
+import Icon9 from '../assets/Icon/icon-ppc.png'
+import Icon10 from '../assets/Icon/icon-DigitalCard.png'
 
 const AllServices = () => {
   return (
@@ -13,7 +23,7 @@ const AllServices = () => {
               <div className="servcie2-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/service-page-icon1.png"
+                    src={Icon1}
                     alt=""
                   />
                 </div>
@@ -44,7 +54,7 @@ const AllServices = () => {
               <div className="servcie2-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/service-page-icon2.png"
+                    src={Icon2} style={{color:'blue'}}
                     alt=""
                   />
                 </div>
@@ -75,7 +85,7 @@ const AllServices = () => {
               <div className="servcie2-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/service-page-icon5.png"
+                    src={Icon3}
                     alt=""
                   />
                 </div>
@@ -106,7 +116,7 @@ const AllServices = () => {
               <div className="servcie2-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/service-page-icon6.png"
+                    src={Icon4}
                     alt=""
                   />
                 </div>
@@ -135,7 +145,7 @@ const AllServices = () => {
               <div className="servcie2-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/service-page-icon7.png"
+                    src={Icon5}
                     alt=""
                   />
                 </div>
@@ -166,7 +176,7 @@ const AllServices = () => {
               <div className="servcie2-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/service-page-icon8.png"
+                    src={Icon6}
                     alt=""
                   />
                 </div>
@@ -197,7 +207,7 @@ const AllServices = () => {
               <div className="servcie2-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/service-page-icon4.png"
+                    src={Icon7}
                     alt=""
                   />
                 </div>
@@ -229,12 +239,12 @@ const AllServices = () => {
               <div className="servcie2-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/service-page-icon4.png"
+                    src={Icon8}
                     alt=""
                   />
                 </div>
                 <a className="arrow">
-                  <Link to="/service/Ecommerce-Market-Placec">
+                  <Link to="/service/Data-Analytics">
                     <i className="bi bi-arrow-right"></i>
                   </Link>
                 </a>
@@ -259,7 +269,7 @@ const AllServices = () => {
               <div className="servcie2-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/service-page-icon4.png"
+                    src={Icon9}
                     alt=""
                   />
                 </div>
@@ -291,7 +301,7 @@ const AllServices = () => {
               <div className="servcie2-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/service-page-icon4.png"
+                    src={Icon10}
                     alt=""
                   />
                 </div>

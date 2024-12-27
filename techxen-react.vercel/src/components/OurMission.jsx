@@ -1,5 +1,6 @@
 import React from "react";
 import "../index-CNfx030l.css";
+import Image from '../assets/Image7.png'
 
 const OurMission = () => {
   return (
@@ -43,21 +44,9 @@ const OurMission = () => {
           </div>
           <div className="col-lg-6">
             <div className="solution-images">
-              <div className="image1">
+              <div className="image2 image-anime">
                 <img
-                  src="https://techxen-react.vercel.app/assets/img/others/solution-img1.png"
-                  alt=""
-                />
-              </div>
-              <div className="image2">
-                <img
-                  src="https://techxen-react.vercel.app/assets/img/others/solution-img2.png"
-                  alt=""
-                />
-              </div>
-              <div className="image3">
-                <img
-                  src="https://techxen-react.vercel.app/assets/img/others/solution-img3.png"
+                  src={Image}
                   alt=""
                 />
               </div>

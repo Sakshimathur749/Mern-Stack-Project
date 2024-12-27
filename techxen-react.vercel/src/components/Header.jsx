@@ -10,6 +10,7 @@ import { Accordion, Offcanvas } from 'react-bootstrap';
 import './MediaQuerie.css';
 import { Link, useLocation } from 'react-router-dom';
 import "../index-CNfx030l.css";
+import Icon1 from '../assets/Icon/icon-phone.png'
 
 function Header() {
   const [show, setShow] = useState(false);
@@ -157,7 +158,7 @@ function Header() {
             <div className="contact-btn">
               <div className="icon">
                 <img
-                  src="https://techxen-react.vercel.app/assets/img/icons/header1-icon.png"
+                  src={Icon1}
                   alt=""
                 />
               </div>

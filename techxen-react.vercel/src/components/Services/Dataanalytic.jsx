@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../index-CNfx030l.css";
 import '../MediaQuerie.css';
 import { Col, Container } from "react-bootstrap";
+import DataAnlyatic from '../../assets/ServicesImage/Data-Analyst.png';
 const Dataanalytic = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const handleToggle = (index) => {
@@ -36,12 +37,9 @@ const Dataanalytic = () => {
                 <div className="details-post-area">
                   <div className="image">
                     <img
-                      src="https://www.pngitem.com/pimgs/m/377-3775170_image-data-analytics-and-machine-learning-hd-png.png"
+                      src={DataAnlyatic}
                       alt=""
-                      height="500px"
-                      width="500px"
-                      className="px"
-                      style={{ paddingBottom: "30px" }}
+                      style={{ paddingBottom: "30px" ,height:"500px", width:"600px" }}
                     />
                   </div>
                   <div className="space30"></div>

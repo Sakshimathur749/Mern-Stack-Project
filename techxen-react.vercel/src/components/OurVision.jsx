@@ -1,6 +1,8 @@
 import React from "react";
 import "../index-CNfx030l.css";
-
+import Icon1 from '../assets/Icon/icon-network.png'
+import Icon2 from '../assets/Icon/icon-it-service.png'
+import Image from '../assets/Image8.jpeg'
 const OurVision = () => {
   return (
     <div className="solution about-solution sp">
@@ -10,31 +12,13 @@ const OurVision = () => {
             <div className="images">
               <div className="row">
                 <div className="col-lg-12">
-                  <div className="image">
+                  <div className="image image-anime">
                     <img
-                      src="https://techxen-react.vercel.app/assets/img/about/visiton-img1.png"
+                      src={Image}
                       alt=""
                     />
                   </div>
-                </div>
-                <div className="col-lg-6 col-sm-6 ">
-                  <div className="space30"></div>
-                  <div className="image ">
-                    <img className=""
-                      src="https://techxen-react.vercel.app/assets/img/about/visiton-img2.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-6 col-sm-6">
-                  <div className="space30"></div>
-                  <div className="image ">
-                    <img className=""
-                      src="https://techxen-react.vercel.app/assets/img/about/visiton-img3.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
+                </div> 
               </div>
             </div>
           </div>
@@ -59,7 +43,7 @@ const OurVision = () => {
                 <div className="icon">
                   <div className="">
                     <img
-                      src="https://techxen-react.vercel.app/assets/img/icons/about-solution-iocn1.png"
+                      src={Icon1}
                       alt=""
                     />
                   </div>
@@ -79,7 +63,7 @@ const OurVision = () => {
                 <div className="icon">
                   <div className="">
                     <img
-                      src="https://techxen-react.vercel.app/assets/img/icons/about-solution-iocn2.png"
+                      src={Icon2}
                       alt=""
                     />
                   </div>

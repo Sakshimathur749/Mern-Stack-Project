@@ -73,14 +73,6 @@
 .prelative{
   position: relative;
 }
-.shape-animaiton3 {
-  animation-name: shape-animaiton3;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-}
-
 .mainimage4 {
   position: absolute;
   bottom: 0;
@@ -91,14 +83,6 @@
   position: absolute;
   bottom: 170px;
   left: 150px;
-}
-@keyframes shape-animaiton3 {
-  0%{
-    transform: translateY(0);
-  }
-  100%{
-    transform: translateY(10px);
-  }
 }
 .about-image {
   position: relative;
@@ -111,43 +95,6 @@
 .image-2 {
   margin-left: 150px;
   bottom: 0px;
-}
-.image-anime {
-  position: relative;
-  overflow: hidden;
-}
-.image-anime::after {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 0%;
-  left: 50%;
-  top: 50%;
-  background-color: #ffffff4d;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  z-index: 1;
-}
-.icon-box {
-  background-color:#0E38B1;
-  padding: 16px 20px;
-  border-radius: 7px;
-  width: 200px;
-  text-align: center;
-  position: absolute;
-  bottom: 100px;
-}
-.icon-box h4 {
-  font-size: 24px;
-  line-height: 24px;
-  font-weight: 700;
-  color: #fff;
-  padding: 16px 0;
-}
-.icon-box p {
-  font-size: 16px;
-  line-height: 28px;
-  font-weight: 400;
-  color: #fff;
 }
 .list{
   padding: 20px 0px;
@@ -205,20 +152,11 @@ span.span {
   gap: 30px;
 }
 .image {
-  margin-top: 30px;
-}
-.image img {
-  width: 100%;
-  border-radius: 7px;
-}
-.image-anime:hover:after {
-  height: 250%;
-  transition: all .6s linear;
-  background-color: transparent;
+  justify-self: center;
 }
 .bg-image {
   position: absolute;
-  top: 160px;
+  top: 70px;
   right: 50px;
   z-index: -1;
 }
@@ -532,4 +470,9 @@ span.span {
 }
 .pt{
   padding-top: 100px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

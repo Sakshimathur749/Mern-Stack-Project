@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
 import { Col, Container } from "react-bootstrap";
+import SocialMediaMarketing from '../../assets/ServicesImage/Social-Media.png';
 const Socialmedia = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const handleToggle = (index) => {
@@ -35,11 +36,9 @@ const Socialmedia = () => {
                 <div className="details-post-area">
                   <div className="image">
                     <img
-                      src="https://adiyogitechnosoft.com/admin/assets/img/service/a87028d993be6f7bc355ea76ca451ba1.jpg"
+                      src={SocialMediaMarketing}
                       alt=""
-                      height="500px"
-                      width="500px"
-                      style={{ paddingBottom: "30px" }}
+                      style={{ paddingBottom: "30px" ,height:"500px", width:"600px" }}
                     />
                   </div>
                   <div className="space30"></div>

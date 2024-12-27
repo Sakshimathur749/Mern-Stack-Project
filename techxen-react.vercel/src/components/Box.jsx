@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap'
 import '../App.css';
 import './MediaQuerie.css'
+import Icon1 from '../assets/Icon/icon-phone.png'
 
 const Box = () => {
     return (
@@ -11,7 +12,7 @@ const Box = () => {
                 <Col xs="3">
                     <div className="single-box">
                         <div className="icon">
-                            <img src="https://techxen-react.vercel.app/assets/img/icons/hero-bottom-icon1.png" alt="" />
+                            <img src={Icon1} alt="" />
                         </div>
                         <div className="headding">
                             <h5>4x Award Wining</h5>
@@ -22,7 +23,7 @@ const Box = () => {
                 <Col xs="3">
                     <div className="single-box">
                         <div className="icon">
-                            <img src="https://techxen-react.vercel.app/assets/img/icons/hero-bottom-icon1.png" alt="" />
+                            <img src={Icon1} alt="" />
                         </div>
                         <div className="headding">
                             <h5>4x Award Wining</h5>
@@ -32,7 +33,7 @@ const Box = () => {
                 <Col xs="3">
                     <div className="single-box">
                         <div className="icon">
-                            <img src="https://techxen-react.vercel.app/assets/img/icons/hero-bottom-icon1.png" alt="" />
+                            <img src={Icon1} alt="" />
                         </div>
                         <div className="headding">
                             <h5>4x Award Wining</h5>
@@ -42,7 +43,7 @@ const Box = () => {
                 </Col>
                 <Col xs="3"><div className="single-box">
                     <div className="icon">
-                        <img src="https://techxen-react.vercel.app/assets/img/icons/hero-bottom-icon1.png" alt="" />
+                        <img src={Icon1} alt="" />
                     </div>
                     <div className="headding">
                         <h5>4x Award Wining</h5>

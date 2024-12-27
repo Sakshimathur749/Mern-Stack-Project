@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
+import Graphicdesigning from '../../assets/ServicesImage/Graphic-designing.png';
 import { Col, Container } from "react-bootstrap";
 const Graphicdesign = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -35,11 +36,9 @@ const Graphicdesign = () => {
                 <div className="details-post-area">
                   <div className="image">
                     <img
-                      src="https://adiyogitechnosoft.com/admin/assets/img/service/bfbb6aa22c787a520e2c91b831ba9525.jpg"
+                      src={Graphicdesigning}
                       alt=""
-                      height="500px"
-                      width="500px"
-                      style={{ paddingBottom: "30px" }}
+                      style={{ paddingBottom: "30px",height:"500px", width:"600px" }}
                     />
                   </div>
                   <div className="space30"></div>

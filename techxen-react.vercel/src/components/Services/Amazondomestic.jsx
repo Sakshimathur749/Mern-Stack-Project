@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
+import EcommercemarketImage from '../../assets/ServicesImage/Ecommerce-market-place.png'
 import '../MediaQuerie.css'
 import { Col, Container } from "react-bootstrap";
 const Amazondomestic = () => {
@@ -36,12 +37,9 @@ const Amazondomestic = () => {
                 <div className="details-post-area">
                   <div className="image">
                     <img 
-                      src="https://thrivemyway.com/wp-content/uploads/2023/07/Amazon-FBA-Business.jpg"
+                      src={EcommercemarketImage}
                       alt=""
-                      height="700px"
-                      width="500px"
-                      className="px"
-                      style={{ paddingBottom: "30px" }}
+                      style={{ paddingBottom: "30px",height:"500px", width:"600px" }}
                     />
                   </div>
                   <div className="space30"></div>

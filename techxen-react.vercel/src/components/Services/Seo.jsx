@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
+import SEO from '../../assets/ServicesImage/SEO.png';
 import { Col, Container } from "react-bootstrap";
 const Seo = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -35,10 +36,8 @@ const Seo = () => {
                 <div className="details-post-area">
                   <div className="image">
                     <img
-                      src="https://adiyogitechnosoft.com/admin/assets/img/service/300b8ae066358112ba7810ec54ab2eef.jpg"
+                      src={SEO}
                       alt=""
-                      height="500px"
-                      width="500px"
                       style={{ paddingBottom: "30px" }}
                     />
                   </div>

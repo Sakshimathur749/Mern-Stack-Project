@@ -1,5 +1,6 @@
 import React from 'react'
 import "../index-CNfx030l.css";
+import HistoryImage from '../assets/History.png'
 import { Col, Container, Row } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -49,7 +50,7 @@ const History = () => {
                 <div className="col-lg-12">
                   <div className="image">
                     <img
-                      src="https://techxen-react.vercel.app/assets/img/about/visiton-img1.png"
+                      src={HistoryImage}
                       alt=""
                     />
                   </div>

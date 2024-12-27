@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import "../App.css";
 import "../index-CNfx030l.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import HeroImage from '../assets/Hero.png'
 
 const Main = () => {
   return (
@@ -61,41 +62,8 @@ const Main = () => {
           </Col>
           <Col xs="7" className="mb120">
             <div className="hero1-all-images">
-              <div className="mainimage1">
-                <Image
-                  src="https://techxen-react.vercel.app/assets/img/hero/hero1-image1.png"
-                  alt="Image 1"
-                />
-              </div>
-              <div className="mainimage2">
-                <Image
-                  src="https://techxen-react.vercel.app/assets/img/hero/hero1-image2.png"
-                  alt="Image 2"
-                />
-              </div>
-              <div className="mainimage3 shape-animaiton3 prelative">
-                <Image
-                  src="https://techxen-react.vercel.app/assets/img/hero/hero1-image3.png"
-                  alt="Image 3"
-                />
-              </div>
-              <div className="mainimage4 shape-animaiton3 ">
-                <Image
-                  src="https://techxen-react.vercel.app/assets/img/hero/hero1-image4.png"
-                  alt="Image 4"
-                />
-              </div>
-              <div className="shape1">
-                <Image
-                  src="https://techxen-react.vercel.app/assets/img/shapes/header1-shape1.png"
-                  alt="Shape 1"
-                />
-              </div>
-              <div className="shape2">
-                <Image
-                  src="https://techxen-react.vercel.app/assets/img/shapes/header1-shape2.png"
-                  alt="Shape 2"
-                />
+              <div className="image3 shape-animaiton3">
+              <Image src={HeroImage} alt="hero Image" />
               </div>
             </div>
           </Col>

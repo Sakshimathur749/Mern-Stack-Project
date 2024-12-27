@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
+import DigitalCard from '../../assets/ServicesImage/Digital-card.png';
 import { Col, Container } from "react-bootstrap";
 const Digitalcard = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -35,11 +36,9 @@ const Digitalcard = () => {
                 <div className="details-post-area">
                   <div className="image">
                     <img
-                      src="https://adiyogitechnosoft.com/admin/assets/img/service/644953319609f990c033ed9e5c5b5a2b.jpg"
+                      src={DigitalCard}
                       alt=""
-                      height="500px"
-                      width="500px"
-                      style={{ paddingBottom: "30px" }}
+                      style={{ paddingBottom: "30px",height:"500px", width:"600px" }}
                     />
                   </div>
                   <div className="space30"></div>

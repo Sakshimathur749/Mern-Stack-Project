@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
+import Ppc from '../../assets/ServicesImage/Pay-Per-Click.png';
 import '../MediaQuerie.css';
 import { Col, Container } from "react-bootstrap";
 const PPC = () => {
@@ -36,12 +37,9 @@ const PPC = () => {
                 <div className="details-post-area">
                   <div className="image">
                     <img
-                      src="https://www.pngitem.com/pimgs/m/143-1437012_pay-per-click-hd-png-download.png"
+                      src={Ppc}
                       alt=""
-                      height="500px"
-                      width="500px"
-                      className="px"
-                      style={{ paddingBottom: "30px" }}
+                      style={{ paddingBottom: "30px" ,height:"500px", width:"600px"}}
                     />
                   </div>
                   <div className="space30"></div>

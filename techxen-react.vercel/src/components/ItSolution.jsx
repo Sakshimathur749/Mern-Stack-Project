@@ -4,7 +4,12 @@ import '../App.css';
 import "../index-CNfx030l.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-
+import Icon1 from '../assets/Icon/icon-wifi.png'
+import Icon2 from '../assets/Icon/icon-cloud.png'
+import Image1 from '../assets/Image2.png'
+import Image2 from '../assets/Image3.png'
+import Image3 from '../assets/Image4.png'
+import Image4 from '../assets/Image5.png'
 const ItSolution = () => {
   return (
     <section className='work sp'>
@@ -20,7 +25,7 @@ const ItSolution = () => {
               <p data-aos="fade-right" data-aos-duration="700">Transform your business with innovative solutions that enhance your digital presence and fuel growth. We combine creativity and technology to deliver customized platforms and global support for your unique needs.</p>
               <div className="single-items" data-aos="fade-right" data-aos-duration="700">
                 <div>
-                  <div className="icon"><img src="https://techxen-react.vercel.app/assets/img/icons/work-iocn1.png" alt="" /></div>
+                  <div className="icon"><img src={Icon1} alt="" /></div>
                 </div>
                 <div ><h4><a>Network Infrastructure Solutions</a></h4>
                   <div style={{ height: '10px' }}></div>
@@ -29,7 +34,7 @@ const ItSolution = () => {
               </div>
               <div className="single-items" data-aos="fade-right" data-aos-duration="700">
                 <div >
-                  <div className="icon"><img src="https://techxen-react.vercel.app/assets/img/icons/work-iocn2.png" alt="" /></div>
+                  <div className="icon"><img src={Icon2} alt="" /></div>
                 </div>
                 <div >
                   <h4><a>Managed It Services</a></h4>
@@ -44,15 +49,15 @@ const ItSolution = () => {
           <Col xs='6'>
             <div className="position-relative">
               <div className="row align-items-center">
-                <div className="col-md-6">
-                  <div className="image image-anime"><img src="https://techxen-react.vercel.app/assets/img/work/work-img1.png" alt="" /></div>
-                  <div className="image image-anime"><img src="https://techxen-react.vercel.app/assets/img/work/work-img3.png" alt="" /></div>
+                <div className="col-md-6" style={{display:'flex',flexDirection:'column',gap:'30px'}}>
+                  <div className="image image-anime"><img src={Image1} alt="" /></div>
+                  <div className="image image-anime"><img src={Image2} alt="" /></div>
                 </div>
                 <div className="col-md-6">
-                  <div className="image image-anime"><img src="https://techxen-react.vercel.app/assets/img/work/work-img2.png" alt="" /></div>
+                  <div className="image image-anime"><img src={Image3} alt="" /></div>
                 </div>
               </div>
-              <img src="https://techxen-react.vercel.app/assets/img/bg/work-bg.png" alt="" className="bg-image shape-animaiton4" />
+              <img src={Image4} alt="" className="bg-image shape-animaiton4" />
             </div>
           </Col>
         </Row>

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import "../index-CNfx030l.css";
+import '../App.css'
+import Icon1 from '../assets/Icon/icon-phone.png'
+import Icon2 from '../assets/Icon/icon-email.png'
+import Icon3 from '../assets/Icon/icon-location.png'
+
 const ContactUs = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errors, setErrors] = useState({});
@@ -89,7 +94,7 @@ const ContactUs = () => {
               <div className="contact-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/contact-page-icon1.png"
+                    src={Icon1}
                     alt=""
                   />
                 </div>
@@ -103,7 +108,7 @@ const ContactUs = () => {
               <div className="contact-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/contact-page-icon2.png"
+                    src={Icon2}
                     alt=""
                   />
                 </div>
@@ -117,7 +122,7 @@ const ContactUs = () => {
               <div className="contact-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/contact-page-icon3.png"
+                    src={Icon3}
                     alt=""
                   />
                 </div>

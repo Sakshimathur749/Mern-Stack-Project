@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
+import WebsiteImage from '../../assets/ServicesImage/Web-Development.png'
 import { Col, Container } from "react-bootstrap";
 const Webdev = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -35,11 +36,9 @@ const Webdev = () => {
                 <div className="details-post-area">
                   <div className="image">
                     <img
-                      src="https://adiyogitechnosoft.com/admin/assets/img/service/3a28d2920552dfcd4141b9b9b88561fb.jpg"
+                      src={WebsiteImage}
                       alt=""
-                      height="500px"
-                      width="500px"
-                      style={{ paddingBottom: "30px" }}
+                      style={{ paddingBottom: "30px",height:"500px", width:"600px" }}
                     />
                   </div>
                   <div className="space30"></div>
