@@ -20,7 +20,7 @@ const OurService = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-6  order-1 order-lg-2">
+          <div className="col-lg-6 details-post-area order-1 order-lg-2">
             <div className="heading1">
               <span
                 className="span"
@@ -46,19 +46,19 @@ const OurService = () => {
               </p>
               <div className="heading1">
                 <ul
-                  className="list"
+                  className="expart-list"
                 >
-                  <li className="fw-semibold fs17 lh30">
+                  <li >
                     <FontAwesomeIcon icon={faCircleCheck} color="blue" />{" "}
-                    Innovative IT Solutions: Boosting efficiency and driving growth.
+                    <span className="text">Innovative IT Solutions:</span> Boosting efficiency and driving growth.
                   </li>
-                  <li className="fw-semibold fs17 lh30">
+                  <li >
                     <FontAwesomeIcon icon={faCircleCheck} color="blue" />{" "}
-                    Wide-Ranging Services: Specializing in web development, SEO, e-commerce, and more.
+                    <span className="text">Wide-Ranging Services:</span> Specializing in web development, SEO, e-commerce, and more.
                   </li>
-                  <li className="fw-semibold fs17 lh30">
+                  <li >
                     <FontAwesomeIcon icon={faCircleCheck} color="blue" /> {''}
-                    Business Growth: Enhancing online presence and maximizing business potential.
+                    <span className="text">Business Growth:</span> Enhancing online presence and maximizing business potential.
                   </li>
                 </ul>
               </div>

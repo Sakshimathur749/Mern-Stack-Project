@@ -1,5 +1,4 @@
 import "./App.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -16,6 +15,10 @@ import Career from './pages/Career'
 import Product from "./pages/Product";
 import Portfolio from "./pages/Portfolio";
 import Newsletter from "./pages/Newsletter";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms_Condition from "./pages/Terms&Condition";
+import Digitalcard from "./pages/Digitalcard";
+import DigitalattendanceSystem from "./pages/DigitalattendanceSystem";
 
 function App() {
   return (
@@ -35,6 +38,10 @@ function App() {
           <Route path="/product" element={<Product/>}></Route>
           <Route path="/portfolio" element={<Portfolio/>}></Route>
           <Route path="/getquotes" element={<Newsletter/>}></Route>
+          <Route path="/products/Digital_Card" element={<Digitalcard/>}></Route>
+          <Route path="/products/Digital_Attendance_System" element={<DigitalattendanceSystem/>}></Route>
+          <Route path="/privacy_policy" element={<PrivacyPolicy/>}></Route>
+          <Route path="/terms_and_condition" element={<Terms_Condition/>}></Route>
         </Routes>
         <Cta />
         <Footer />

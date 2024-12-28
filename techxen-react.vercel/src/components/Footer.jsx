@@ -102,23 +102,12 @@ Footer = () => {
               <div className="contact-box">
                 <div className="icon">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/footer1-icon1.png"
-                    alt=""
-                  />
-                </div>
-                <div className="pera">
-                  <a href="tel:0500222333">0500 222 333</a>
-                </div>
-              </div>
-              <div className="contact-box">
-                <div className="icon">
-                  <img
                     src="https://techxen-react.vercel.app/assets/img/icons/footer1-icon2.png"
                     alt=""
                   />
                 </div>
                 <div className="pera">
-                  <a href="tel:0356588547">03 5658 8547</a>
+                  <a href="/contact">+91 86907 31436</a>
                 </div>
               </div>
               <div className="contact-box">
@@ -158,8 +147,8 @@ Footer = () => {
             </div>
             <div className="col-md-7">
               <div className="coppyright right-area">
-                <a href="#">Terms &amp; Conditions</a>
-                <a href="#">Privacy Policy</a>
+                <a href="/terms_and_condition">Terms &amp; Conditions</a>
+                <a href="/privacy_policy">Privacy Policy</a>
               </div>
             </div>
           </div>

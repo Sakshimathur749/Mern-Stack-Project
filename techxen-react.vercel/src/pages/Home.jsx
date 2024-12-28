@@ -16,7 +16,6 @@ const Home = () => {
   return (
     <div>
         <Main/>
-        <Box/>
         <Ourcompany/>
         <Services/>
         <ItSolution/>

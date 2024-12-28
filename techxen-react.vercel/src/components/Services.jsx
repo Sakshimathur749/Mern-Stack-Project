@@ -33,32 +33,18 @@ const Services = () => {
                     <Col xs='6'>
                     <div className="single-box">
                             <div className="icon">
-                                <img src={Icon1} alt="" />
+                                <img src={Icon5} alt="" />
                             </div>
                             <div className="heading1">
-                                <h4><a href="/service/Digital-Card">Digital Card Services</a></h4>
+                                <h4><a href="/service/Web-Development">Web Developnment</a></h4>
                                 <div style={{ height: '16px' }}></div>
-                                <p>Our digital card services provide innovative solutions for businesses wanting to create easy-to-share and eco-friendly digital business cards. We design customizable cards that leave a lasting impression.</p>
+                                <p>Our web development services emphasize creating responsive, scalable, and secure websites. Using modern frameworks and best practices, we ensure your online presence is visually appealing and highly functional.</p>
                                 <div style={{ height: '16px' }} ></div>
-                                <a className="learn" href="/service/Digital-Card">Learn More <span><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></span></a>
-                            </div>
-                        </div> 
-                    </Col>
-                    <Col xs='6'>
-                        <div className="single-box">
-                            <div className="icon">
-                                <img src={Icon2} alt="" />
-                            </div>
-                            <div className="heading1">
-                                <h4><a href="/service/Graphic-Designing">Graphic Designing</a></h4>
-                                <div style={{ height: '16px' }}></div>
-                                <p>Make a lasting impression with eye-catching graphics and visuals. Our talented designers create custom logos, banners, infographics, and more to elevate your brand identity and enhance your digital marketing efforts.</p>
-                                <div style={{ height: '16px' }} ></div>
-                                <a className="learn" href="/service/Graphic-Designing">Learn More <span><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></span></a>
+                                <a className="learn" href="/service/Web-Development">Learn More <span><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></span></a>
                             </div>
                         </div>
                     </Col>
-                    <Col xs='4'>
+                    <Col xs='6'>
                     <div className="single-box">
                         <div className="icon"><img src={Icon3} alt=""/></div>
                             <div className="heading1">
@@ -85,18 +71,32 @@ const Services = () => {
                         </div>
                     </Col>
                     <Col xs='4'>
-                        <div className="single-box">
+                    <div className="single-box">
                             <div className="icon">
-                                <img src={Icon5} alt="" />
+                                <img src={Icon2} alt="" />
                             </div>
                             <div className="heading1">
-                                <h4><a href="/service/Web-Development">Web Developnment</a></h4>
+                                <h4><a href="/service/Graphic-Designing">Graphic Designing</a></h4>
                                 <div style={{ height: '16px' }}></div>
-                                <p>Our web development services emphasize creating responsive, scalable, and secure websites. Using modern frameworks and best practices, we ensure your online presence is visually appealing and highly functional.</p>
+                                <p>Make a lasting impression with eye-catching graphics and visuals. Our talented designers create custom logos, banners, infographics, and more to elevate your brand identity and enhance your digital marketing efforts.</p>
                                 <div style={{ height: '16px' }} ></div>
-                                <a className="learn" href="/service/Web-Development">Learn More <span><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></span></a>
+                                <a className="learn" href="/service/Graphic-Designing">Learn More <span><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></span></a>
                             </div>
                         </div>
+                    </Col>
+                    <Col xs='4'>
+                    <div className="single-box">
+                            <div className="icon">
+                                <img src={Icon1} alt="" />
+                            </div>
+                            <div className="heading1">
+                                <h4><a href="/service/Digital-Card">Digital Card Services</a></h4>
+                                <div style={{ height: '16px' }}></div>
+                                <p>Our digital card services provide innovative solutions for businesses wanting to create easy-to-share and eco-friendly digital business cards. We design customizable cards that leave a lasting impression.</p>
+                                <div style={{ height: '16px' }} ></div>
+                                <a className="learn" href="/service/Digital-Card">Learn More <span><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></span></a>
+                            </div>
+                        </div> 
                     </Col>
                 </Row>
             </Container>
