@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
+import "../../App.css";
 import AppDevelopment from '../../assets/ServicesImage/App-Development.png';
 import { Col, Container } from "react-bootstrap";
 const Appdev = () => {

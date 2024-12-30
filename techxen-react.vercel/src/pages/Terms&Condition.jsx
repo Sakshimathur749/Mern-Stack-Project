@@ -1,5 +1,6 @@
 import React from 'react'
 import "../index-CNfx030l.css";
+import "../App.css";
 import Commonhero from '../components/Commonhero'
 import Herobanner from '../components/Herobanner'
 import { Helmet } from 'react-helmet';

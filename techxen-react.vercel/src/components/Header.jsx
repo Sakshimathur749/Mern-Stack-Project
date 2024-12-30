@@ -24,7 +24,7 @@ function Header() {
 
   return (
     <>
-      <Navbar expand="xl" className="bg-body-tertiary" style={{ position: 'sticky',top: '0px', zIndex:'10'}}>
+      <Navbar expand="xl"  style={{backgroundColor:'#ffff' ,position: 'sticky',top: '0px', zIndex:'10'}}>
         <Container fluid style={{ height: "70px" }}>
           <Navbar.Brand href="/" onClick={() => window.location.reload()}>
             <img

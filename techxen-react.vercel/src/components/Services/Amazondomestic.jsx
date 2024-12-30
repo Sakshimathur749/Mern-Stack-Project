@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
+import "../../App.css";
 import EcommercemarketImage from '../../assets/ServicesImage/Ecommerce-market-place.png'
 import '../MediaQuerie.css'
 import { Col, Container } from "react-bootstrap";

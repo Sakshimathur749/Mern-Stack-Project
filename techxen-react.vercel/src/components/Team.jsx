@@ -1,5 +1,6 @@
 import React from "react";
 import "../index-CNfx030l.css";
+import "../App.css"
 
 const Team = () => {
   return (

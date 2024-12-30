@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
+import "../../App.css";
 import SEO from '../../assets/ServicesImage/SEO.png';
 import { Col, Container } from "react-bootstrap";
 const Seo = () => {

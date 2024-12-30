@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
 import '../MediaQuerie.css';
+import "../../App.css";
 import { Col, Container } from "react-bootstrap";
 import DataAnlyatic from '../../assets/ServicesImage/Data-Analyst.png';
 const Dataanalytic = () => {

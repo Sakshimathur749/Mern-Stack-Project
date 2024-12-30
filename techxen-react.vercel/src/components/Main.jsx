@@ -51,12 +51,6 @@ const Main = () => {
                     <i className="bi bi-arrow-right"></i>
                   </span>
                 </a>
-                <span className="play-btn">
-                  <span>
-                    <i className="bi bi-play"></i>
-                  </span>{" "}
-                  Watch Demo Video
-                </span>
               </div>
             </div>
           </Col>

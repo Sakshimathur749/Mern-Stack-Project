@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../index-CNfx030l.css";
+import "../../App.css";
 import { Col, Container } from "react-bootstrap";
 import SocialMediaMarketing from '../../assets/ServicesImage/Social-Media.png';
 const Socialmedia = () => {
