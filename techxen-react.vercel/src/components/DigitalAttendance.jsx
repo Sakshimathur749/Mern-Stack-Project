@@ -10,15 +10,80 @@ const DigtialAttendance = () => {
     setShowPricing(!showPricing);
   };
   return (
-    <div className="pricing sp">
+    <div>
+      <div className="work sp">
       <div className="container">
-        <div className="row">
-          <div className="col-lg-11 heading1">
-          <p>Transform your business's operations with our professional Employee Attendance System. Designed specifically for startups and small businesses, our system helps you easily track employee attendance, ensuring efficiency and accuracy. Enhance management by providing real-time data on working hours, leaves, and attendance trends. With a focus on convenience and professionalism, our Employee Attendance System streamlines workforce management, saving time and reducing errors. Affordable and scalable, it's the perfect tool to help your business improve productivity and maintain a smooth workflow.</p>
+      <div className="row" style={{ display: "flex", flexDirection: "row" }}>
+      <div className="col-lg-6">
+            <div className="heading1">
+              <span
+                className="span"
+                data-aos="zoom-in-left"
+                data-aos-duration="700"
+              >
+                <img
+                  src="https://techxen-react.vercel.app/assets/img/icons/span1.png"
+                  alt=""
+                />
+                Digital Attendance System
+              </span>
+              <h2 className="title tg-element-title">
+              The Future of Attendance Management Is Digital
+              </h2>
+              <div className="space16"></div>
+              <p data-aos="fade-right" data-aos-duration="700">
+              Transform your business's attendance management with our professional Digital Attendance System. Designed specifically for startups and small businesses, our system enables you to track and manage attendance easily, accurately, and securely. Whether you're a startup looking to streamline your HR processes or a small business aiming to boost efficiency, our solution offers an innovative and effective approach. With just a few clicks, your team or employees can clock in, and you can access real-time attendance data, track work hours, and manage leaves, ensuring you're always on top of attendance management. 
+              </p>
+              <div className="space20"></div>
+              <p data-aos="fade-right" data-aos-duration="700">
+              Our Digital Attendance System focuses on convenience, accuracy, and security, making employee management and attendance tracking seamless. Say goodbye to manual attendance systems that are prone to errors and time-consuming processes, and embrace a modern, automated solution. Affordable and scalable, our system grows with your business, offering flexibility and easy updates whenever needed. This tool is the perfect way to enhance productivity, improve time tracking, and make a lasting impact on your HR practices in the digital age.
+              </p>
+            </div>
+            <div className="space30"></div>
+            <div className="" data-aos="fade-right" data-aos-duration="800">
+              <a className="theme-btn1" href="/contact">
+                Discover More{" "}
+                <span>
+                  <i className="bi bi-arrow-right"></i>
+                </span>
+              </a>
+            </div>
+          </div> 
+          <div className="col-lg-6">
+            <div className="work-images">
+              <div className="row align-items-center">
+                <div className="col-md-6">
+                  <div className="image image-anime">
+                    <img
+                      src="https://techxen-react.vercel.app/assets/img/work/work-img1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div className="space20"></div>
+                  <div className="image image-anime">
+                    <img
+                      src="https://techxen-react.vercel.app/assets/img/work/work-img3.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="image image-anime">
+                    <img
+                      src="https://techxen-react.vercel.app/assets/img/work/work-img2.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="space50"></div>
-        <div className="row">
+      </div>
+    </div>
+    <div className="service pricing sp">
+      <div className="container">
+      <div className="row">
           <div className="col-lg-8 m-auto text-center">
             <div className="heading1">
               <div>
@@ -26,13 +91,13 @@ const DigtialAttendance = () => {
                   <img src="https://techxen-react.vercel.app/assets/img/icons/span1.png" alt="" /> Our Pricing
                   Plan
                 </span>
-                 <div><a  onClick={togglePricing} className='theme-btn1' style={{padding:'8px'}}>Employee Attendance System</a></div>
+                 {/* <div><a  onClick={togglePricing} className='theme-btn1' style={{padding:'8px'}}>Employee Attendance System</a></div> */}
+                 <h2>Explore Our Flexible Pricing Plans</h2>
               </div>
             </div>
           </div>
         </div>
         <div className="space30"></div>
-        {showPricing && (
         <div className="row justify-content-center">
           <div className="col-lg-4" data-aos="fade-up" data-aos-duration="1100">
             <div className="single-pricing-box">
@@ -45,15 +110,15 @@ const DigtialAttendance = () => {
               <div className="border"></div>
               <h4>Featured Included:</h4>
               <ul className="list">
-                <li><FontAwesomeIcon icon={faCheckCircle}  height={20} width={20} color='#0E38B1'/>{" "}5 page static website</li>
-                <li><FontAwesomeIcon icon={faCheckCircle}  height={20} width={20} color='#0E38B1'/>{" "}Mobile friendly design</li>
-                <li><FontAwesomeIcon icon={faCheckCircle}  height={20} width={20} color='#0E38B1'/>{" "}Basic contact form</li>
-                <li><FontAwesomeIcon icon={faCheckCircle}  height={20} width={20} color='#0E38B1'/>{" "}Social media integration</li>
-                <li><FontAwesomeIcon icon={faCheckCircle}  height={20} width={20} color='#0E38B1'/>{" "}Delivery time: 7 days</li>
-                <li><FontAwesomeIcon icon={faXmark}  height={20} width={20} color='red'/>{" "}SEO friendly design</li>
-                <li><FontAwesomeIcon icon={faXmark}  height={20} width={20} color='red'/>{" "}Analytics &amp; reporting</li>
-                <li><FontAwesomeIcon icon={faXmark}  height={20} width={20} color='red'/>{" "}Email integration</li>
-                <li><FontAwesomeIcon icon={faXmark}  height={20} width={20} color='red'/>{" "}Maintenance support </li>
+                <li><FontAwesomeIcon icon={faCheckCircle}  height={20} width={20} color='#0E38B1'/>{" "}All features from the Advanced plan</li>
+                <li><FontAwesomeIcon icon={faCheckCircle}  height={20} width={20} color='#0E38B1'/>{" "}Seamless integration with HRMS and ERP systems for automated data flow</li>
+                <li><FontAwesomeIcon icon={faCheckCircle}  height={20} width={20} color='#0E38B1'/>{" "}Employee self-service portal for managing attendance and leave requests</li>
+                <li><FontAwesomeIcon icon={faCheckCircle}  height={20} width={20} color='#0E38B1'/>{" "}Automated generation of attendance reports, overtime calculations</li>
+                <li><FontAwesomeIcon icon={faCheckCircle}  height={20} width={20} color='#0E38B1'/>{" "} Mobile app for real-time attendance tracking, check-ins, and leave applications</li>
+                <li><FontAwesomeIcon icon={faCheckCircle}  height={20} width={20} color='#0E38B1'/>{" "} Advanced analytics and insights, offering managers a clear view of employee attendance trends</li>
+                <li><FontAwesomeIcon icon={faXmark}  height={20} width={20} color='red'/>{" "}Customizable leave policies and workflows for different employee types</li>
+                <li><FontAwesomeIcon icon={faXmark}  height={20} width={20} color='red'/>{" "}24/7 support & maintenance with dedicated account manager</li>
+                <li><FontAwesomeIcon icon={faXmark}  height={20} width={20} color='red'/>{" "}Flexible shift scheduling, automated overtime tracking, and custom reports</li>
               </ul>
               <div className="space30"></div>
               <div className="button" style={{textAlign:'center'}}>
@@ -67,8 +132,8 @@ const DigtialAttendance = () => {
             </div>
           </div>
         </div>
-        )}
       </div>
+    </div>
     </div>
   );
 }

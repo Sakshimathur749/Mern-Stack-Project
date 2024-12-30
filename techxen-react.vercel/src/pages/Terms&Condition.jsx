@@ -2,10 +2,21 @@ import React from 'react'
 import "../index-CNfx030l.css";
 import Commonhero from '../components/Commonhero'
 import Herobanner from '../components/Herobanner'
+import { Helmet } from 'react-helmet';
 
 const Terms_Condition = () => {  
   return (
     <div>
+      <Helmet>
+        <meta
+          name="description"
+          content="Read our Terms and Conditions to understand the rules and guidelines for using our website and services including web development, app development, SEO, social media marketing, and more. Learn about payment terms, confidentiality, and limitations of liability."
+        />
+        <meta
+          name="keywords"
+          content="terms and conditions, website services, app development, SEO, social media marketing, payment terms, confidentiality, legal agreements, privacy policy, liability limitations"
+        />
+      </Helmet>
       <Commonhero name={"Terms And Condition"} />
       <Herobanner />
       <div className="service-details-area-all details-post-area sp">

@@ -62,7 +62,7 @@ const Main = () => {
           </Col>
           <Col xs="7" className="mb120">
             <div className="hero1-all-images">
-              <div className="image3 shape-animaiton3">
+              <div className="image3 ">
               <Image src={HeroImage} alt="hero Image" />
               </div>
             </div>

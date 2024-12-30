@@ -2,10 +2,21 @@ import React from 'react'
 import "../index-CNfx030l.css";
 import Commonhero from '../components/Commonhero'
 import Herobanner from '../components/Herobanner'
+import { Helmet } from 'react-helmet';
 
 const PrivacyPolicy = () => {
    return (
      <div>
+      <Helmet>
+        <meta
+          name="description"
+          content="Our Privacy Policy outlines how we collect, use, and protect your personal information. Learn about your rights, cookies, and third-party links to ensure a secure and transparent online experience."
+        />
+        <meta
+          name="keywords"
+          content="privacy policy, personal information protection, data security, cookies, third-party links, privacy rights, data collection, website privacy"
+        />
+      </Helmet>
        <Commonhero name={"Privacy Policy"} />
        <Herobanner />
        <div className="service-details-area-all details-post-area sp">
