@@ -9,6 +9,7 @@ import Testimonials from '../components/Testimonials'
 import Blog from '../components/Blog'
 import { useLocation } from 'react-router'
 import { Helmet } from 'react-helmet'
+import Brands from '../components/Brands'
 
 const Home = () => {
   
@@ -27,6 +28,7 @@ const Home = () => {
         <title>Techxen</title>
       </Helmet>
       <Main />
+      <Brands/>
       <Ourcompany />
       <Services />
       <ItSolution />

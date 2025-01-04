@@ -13,7 +13,7 @@ const Ourcompany = () => {
     return (
         <section className="about1 sp">
             <Container>
-                <Row className='rowgap'>
+                <Row >
                     <Col xs='6' className='justify-align-center'>
                         <div className="about-image ">
                             {/* <div className="image-1">

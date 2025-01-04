@@ -8,17 +8,17 @@ const Products = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-8 m-auto text-center">
-            <div className="heading4">
+            <div className="heading1">
               <div>
-                <span
-                  className="span"
-                  data-aos="zoom-in-left"
-                  data-aos-duration="700"
-                >
-                  How It Works 👋
+              <span className="span">
+                  <img
+                    src="https://techxen-react.vercel.app/assets/img/icons/span1.png"
+                    alt=""
+                  />{" "}
+                  Our Success
                 </span>
                 <h2 className="title tg-element-title">
-                  Unlocking Success: The Project-by-Project Guide to Our IT Solution
+                  The Project-by-Project Guide to Our IT Solution
                   Process
                 </h2>
               </div>
@@ -42,6 +42,19 @@ const Products = () => {
               <p>
               Rajasthan is home to a diverse range of species, from desert flora and fauna to the vibrant wildlife of its national parks. These species are vital to the state’s ecosystem, reflecting its rich natural heritage.
               </p>
+              <div className="space16"></div>
+              <div style={{ textAlign: "right" }}>
+                  <a
+                    className="learn"
+                    style={{ marginLeft: "auto", textDecoration: "underline" }}
+                    href="https://rajasthanispices.com/"
+                  >
+                    Visit{" "}
+                    <span>
+                      <i className="bi bi-arrow-right"></i>
+                    </span>
+                  </a>
+                </div>
               </Link>
             </div>
           </div>

@@ -157,7 +157,9 @@
    .mb120{
     margin-bottom: 120px;
    }
-   
+   .slide{
+    display: none;
+   }
   }
 
   @media screen and (max-width:526px) {

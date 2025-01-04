@@ -174,7 +174,6 @@ function Header() {
           <Navbar.Toggle onClick={handleShow} />
         </Container>
       </Navbar>
-
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>

@@ -2,7 +2,7 @@ import React from "react";
 import "../index-CNfx030l.css";
 import Icon1 from '../assets/Icon/icon-network.png'
 import Icon2 from '../assets/Icon/icon-it-service.png'
-import Image from '../assets/Image8.jpeg'
+import Image from '../assets/Image8.png'
 const OurVision = () => {
   return (
     <div className="solution about-solution sp">
@@ -41,16 +41,14 @@ const OurVision = () => {
               </p>
               <div className="item-box">
                 <div className="icon">
-                  <div className="">
-                    <img
+                  <img
                       src={Icon1}
                       alt=""
                     />
-                  </div>
                 </div>
                 <div className="">
                   <h3>
-                    <a href="#">Network Infrastructure Solutions</a>
+                    <a>Network Infrastructure Solutions</a>
                   </h3>
                   <div className="space10"></div>
                   <p>
@@ -61,16 +59,14 @@ const OurVision = () => {
               </div>
               <div className="item-box">
                 <div className="icon">
-                  <div className="">
                     <img
                       src={Icon2}
                       alt=""
                     />
-                  </div>
                 </div>
                 <div className="">
                   <h3>
-                    <a href="#">Managed It Services</a>
+                    <a>Managed It Services</a>
                   </h3>
                   <div className="space10"></div>
                   <p>

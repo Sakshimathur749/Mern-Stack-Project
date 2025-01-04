@@ -21,7 +21,7 @@ const AllBlogsDetails = () => {
                   <div className="social-users">
                     <ul>
                       <li>
-                        <a href="#">
+                        <a href="">
                           <img
                             src="https://techxen-react.vercel.app/assets/img/icons/user-icon1.png"
                             alt=""
@@ -30,7 +30,7 @@ const AllBlogsDetails = () => {
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="">
                           <img
                             src="https://techxen-react.vercel.app/assets/img/icons/user-icon2.png"
                             alt=""
@@ -39,21 +39,12 @@ const AllBlogsDetails = () => {
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="">
                           <img
                             src="https://techxen-react.vercel.app/assets/img/icons/user-icon3.png"
                             alt=""
                           />{" "}
                           Cyber Security
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img
-                            src="https://techxen-react.vercel.app/assets/img/icons/user-icon4.png"
-                            alt=""
-                          />{" "}
-                          03 Comments
                         </a>
                       </li>
                     </ul>
@@ -116,7 +107,7 @@ const AllBlogsDetails = () => {
                 </div>
               </article>
               <div className="space50"></div>
-              <article>
+              {/* <article>
                 <div className="details-post-area">
                   <div className="video-area-image">
                     <div className="image">
@@ -144,178 +135,7 @@ const AllBlogsDetails = () => {
                   </div>
                 </div>
               </article>
-              <div className="blog-details-border"></div>
-              <div className="tags-links">
-                <div className="row align-items-center">
-                  <div className="col-lg-7">
-                    <div className="tags">
-                      <ul>
-                        <li className="text">Tags:</li>
-                        <li className="tag-text">
-                          <a href="#">Business </a>
-                        </li>
-                        <li className="tag-text">
-                          <a href="#">Services </a>
-                        </li>
-                        <li className="tag-text">
-                          <a href="#">IT Solution </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="col-lg-5">
-                    <div className="social">
-                      <ul>
-                        <li className="text">Social:</li>
-                        <li className="icon">
-                          <a href="#">
-                            <i className="bi bi-linkedin"></i>
-                          </a>
-                        </li>
-                        <li className="icon">
-                          <a href="#">
-                            <i className="bi bi-twitter"></i>
-                          </a>
-                        </li>
-                        <li className="icon">
-                          <a href="#">
-                            <i className="bi bi-youtube"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="blog-details-border"></div>
-              <article>
-                <div className="details-post-area">
-                  <div className="heading1">
-                    <h5>Blog Comments (2)</h5>
-                    <div className="comment-box">
-                      <div className="box-top-area">
-                        <div className="heading-area">
-                          <div className="image">
-                            <img
-                              src="https://techxen-react.vercel.app/assets/img/blog/comment-box-image1.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="heading">
-                            <h5>
-                              <a href="#">Mr. Ana Ritchie</a>
-                            </h5>
-                            <a href="#" className="date">
-                              8/1/2024
-                            </a>
-                          </div>
-                        </div>
-                        <div className="reply-btn">
-                          <a href="#">
-                            <span>
-                              <i className="bi bi-reply-fill"></i>
-                            </span>{" "}
-                            Reply
-                          </a>
-                        </div>
-                      </div>
-                      <div className="space20"></div>
-                      <p className="pera">
-                        The team at TechXen goes above and beyond to provide
-                        exceptional support and service. From the initial
-                        consultation to the final deployment, they were there
-                        every step of the way, ensuring a seamless integration
-                        of our new technology solution.
-                      </p>
-                    </div>
-                    <div className="comment-box comment-box2">
-                      <div className="box-top-area">
-                        <div className="heading-area">
-                          <div className="image">
-                            <img
-                              src="https://techxen-react.vercel.app/assets/img/blog/comment-box-image2.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="heading">
-                            <h5>
-                              <a href="#">Matthew Kuhnemann</a>
-                            </h5>
-                            <a href="#" className="date">
-                              8/1/2024
-                            </a>
-                          </div>
-                        </div>
-                        <div className="reply-btn">
-                          <a href="#">
-                            <span>
-                              <i className="bi bi-reply-fill"></i>
-                            </span>{" "}
-                            Reply
-                          </a>
-                        </div>
-                      </div>
-                      <div className="space20"></div>
-                      <p className="pera">
-                        We approached TechXen with a complex IT problem, and
-                        they were able to provide an innovative solution that
-                        addressed our needs perfectly. Their teams creativity,
-                        technical prowess, and dedication to client satisfaction
-                        are truly commendable.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <div className="space50"></div>
-              <div className="contact-form-details">
-                <form action="#">
-                  <div className="row">
-                    <div className="col-lg-6">
-                      <div className="single-input">
-                        <input type="text" placeholder="First Name" />
-                      </div>
-                    </div>
-                    <div className="col-lg-6">
-                      <div className="single-input">
-                        <input type="text" placeholder="Last Name" />
-                      </div>
-                    </div>
-                    <div className="col-lg-6">
-                      <div className="single-input">
-                        <input type="email" placeholder="Email" />
-                      </div>
-                    </div>
-                    <div className="col-lg-6">
-                      <div className="single-input">
-                        <input type="number" placeholder="Phone" />
-                      </div>
-                    </div>
-                    <div className="col-lg-12">
-                      <div className="single-input">
-                        <input type="text" placeholder="Subject" />
-                      </div>
-                    </div>
-                    <div className="col-lg-12">
-                      <div className="single-input">
-                        <textarea
-                          cols="30"
-                          rows="5"
-                          placeholder="Message"
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div className="col-lg-12">
-                      <button className="theme-btn1">
-                        Submit Now{" "}
-                        <span>
-                          <i className="bi bi-arrow-right"></i>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
+              <div className="space50"></div> */}
             </div>
           </div>
           <div className="col-lg-4">
@@ -329,59 +149,6 @@ const AllBlogsDetails = () => {
                   </button>
                 </div>
               </div>
-            </div>
-            <div className="sidebar-box-area sidebar-bg mb-40">
-              <h3>Our Services</h3>
-              <ul className="features-list">
-                <li>
-                  <a href="/service">
-                    Software Development{" "}
-                    <span>
-                      <i className="bi bi-chevron-right"></i>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/service">
-                    Consulting Service{" "}
-                    <span>
-                      <i className="bi bi-chevron-right"></i>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/service">
-                    Cloud Solution{" "}
-                    <span>
-                      <i className="bi bi-chevron-right"></i>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/service">
-                    Cyber Security{" "}
-                    <span>
-                      <i className="bi bi-chevron-right"></i>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/service">
-                    Data Analytics{" "}
-                    <span>
-                      <i className="bi bi-chevron-right"></i>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/service">
-                    Manage It Services{" "}
-                    <span>
-                      <i className="bi bi-chevron-right"></i>
-                    </span>
-                  </a>
-                </li>
-              </ul>
             </div>
             <div className="sidebar-box-area sidebar-bg mb-40">
               <h3>Recent Blogs</h3>
@@ -484,58 +251,6 @@ const AllBlogsDetails = () => {
                     </h5>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="sidebar-box-area sidebar-bg mb-40">
-              <h3>Tags</h3>
-              <ul className="tags">
-                <li>
-                  <a href="#">Software Development</a>
-                </li>
-                <li>
-                  <a href="#">Cloud </a>
-                </li>
-                <li>
-                  <a href="#">It Solution</a>
-                </li>
-                <li>
-                  <a href="#">Data Analytics Service</a>
-                </li>
-                <li>
-                  <a href="#">Technology</a>
-                </li>
-                <li>
-                  <a href="#">Custom Development</a>
-                </li>
-                <li>
-                  <a href="#">Cyber Security</a>
-                </li>
-                <li>
-                  <a href="#">Consulting Service</a>
-                </li>
-              </ul>
-            </div>
-            <div className="sidebar-box-area sidebar-bg mb-40">
-              <h3>Download Brochure</h3>
-              <p>
-                With a focus on excellence &amp; commitment to exceeding
-                expectations, our experienced team is here to empower Solution.
-              </p>
-              <div className="download-btns">
-                <a className="daownload1" href="#">
-                  PDF Download{" "}
-                  <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/download-img.png"
-                    alt=""
-                  />
-                </a>
-                <a className="daownload2" href="#">
-                  DOC Download{" "}
-                  <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/download-img.png"
-                    alt=""
-                  />
-                </a>
               </div>
             </div>
           </div>

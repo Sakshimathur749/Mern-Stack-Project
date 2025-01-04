@@ -19,6 +19,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms_Condition from "./pages/Terms&Condition";
 import Digitalcard from "./pages/Digitalcard";
 import DigitalattendanceSystem from "./pages/DigitalattendanceSystem";
+import EnquiryForm from "./components/EquieryForm";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/privacy_policy" element={<PrivacyPolicy/>}></Route>
           <Route path="/terms_and_condition" element={<Terms_Condition/>}></Route>
         </Routes>
+        <EnquiryForm/>
         <Cta />
         <Footer />
       </BrowserRouter>

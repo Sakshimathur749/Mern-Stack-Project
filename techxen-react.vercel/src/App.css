@@ -160,27 +160,17 @@ span.span {
   right: 50px;
   z-index: -1;
 }
-.shape-animaiton4 {
-  animation-name: shape-animaiton4;
-  animation-duration: 62s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: linear;
+.shape-animaiton {
+  animation: shape-animaiton 15s linear infinite;
+  display: flex;
 }
-@keyframes  shape-animaiton4{
-  0%{
-    transform: rotate(0);
+@keyframes  shape-animaiton{
+  0% {
+    transform: translateX(0);
   }
-  100%{
-    transform: rotate(1000deg);
+  100% {
+    transform: translateX(-100%);
   }
-}
-.slick-track:before{
-  display: table;
-  content: "";
-}
-.slick-track{
-  width:1300px;
 }
 .footer-logo-area {
   padding-right: 70px;
@@ -475,4 +465,21 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .pricing .single-pricing-box:hover .svg-inline--fa{
   color:#E7EBF7;
+}
+.custom-bullet {
+  background-color: #ddd; /* Light grey color for inactive bullets */
+  width: 8px;
+  height: 8px;
+  margin: 0 5px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.custom-bullet-active {
+  background-color: #007bff; /* Blue color for the active bullet */
+}
+.swiper-button-next{
+  display: none;
+}
+.swiper-button-prev .swiper-button-disabled{
+  display: none;
 }
