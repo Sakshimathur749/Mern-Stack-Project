@@ -5,6 +5,9 @@
 .ql-snow *{
   color: black;
 }
+.dt-type-numeric{
+  text-align: left !important;
+}
 /* Blog.css */
 .successMessage{
   background-color: rgb(76, 175, 80);
