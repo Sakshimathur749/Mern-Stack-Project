@@ -8,10 +8,12 @@ const ContactRoute = require ('./router/contact-router')
 const GetaQuoteRoute = require ('./router/getquote-router')
 const EnquieryFormRoute = require('./router/enquiery-router')
 const BlogRoute = require('./router/blog-router')
+const AdminRoutes= require('./router/admin-router')
 const connectdb = require('./utils/db')
-
+const path = require('path')
 
 app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,6 +22,7 @@ app.use('/api',GetaQuoteRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/form',ContactRoute);
 app.use('/api/post',BlogRoute);
+// app.use('/api/admin',AdminRoutes)
 app.use('/form',EnquieryFormRoute);
 app.use('/uploads', express.static('uploads'));
 

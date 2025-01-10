@@ -1,18 +1,289 @@
-button[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  input[type="text"]:focus,
-textarea:focus {
-  border-color: #4CAF50;
-  outline: none;
+@import 'datatables.net-dt';
+@import 'datatables.net-responsive-dt';
+@import 'datatables.net-select-dt';
+
+.ql-snow *{
+  color: black;
 }
-@media (min-width: 768px) {
-    .blog-upload-page {
-      width: 50%;
-    }
-  
-    input[type="text"],
-    textarea {
-      width: 60%;
-    }
+/* Blog.css */
+.successMessage{
+  background-color: rgb(76, 175, 80);
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+    transition: opacity 0.3s ease-out;
+    transform: translate(-50%, 0%);
+    inset: 100px auto auto 50%;
+}
+.ErrorMessage{
+  backgroundColor: #f44336;
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  position: absolute;
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+  transition: opacity 0.3s ease-out;
+  transform: translate(-50%, 0%);
+  inset: 100px auto auto 50%;
+}
+
+/* General Styling for the Page */
+.posted-blog-container {
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+/* Table Styling */
+.blog-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.table-header {
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-row:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}
+
+.table-data {
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Buttons for Edit and Delete */
+.btn-edit,
+.btn-delete {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-edit {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #218838;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+/* Error message Styling */
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* Wrapper for the entire edit blog form */
+.edit-blog-container {
+  width: 60%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header for the page */
+.edit-blog-header {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Error message styling */
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Form groups (for spacing between input fields) */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Labels for form fields */
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Input fields and textareas */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Specific styling for textareas */
+.form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Button styling */
+.btn-save {
+  background-color: #0056b3 !important;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+
+/* General styling for the delete popup */
+.delete-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background with transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure the popup is on top of other elements */
+}
+
+/* Styling for the popup content */
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px; /* Set a fixed width for the popup */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the heading inside the popup */
+.popup-content h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style for the "Yes, Delete" button */
+.btn-confirm-delete {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 10px; /* Add space between buttons */
+  transition: background-color 0.3s ease;
+}
+
+.btn-confirm-delete:hover {
+  background-color: #c0392b;
+}
+
+/* Style for the "No, Cancel" button */
+.btn-cancel-delete {
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancel-delete:hover {
+  background-color: #7f8c8d;
+}
+
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .blog-table {
+    width: 100%;
+    font-size: 14px;
   }
+  .edit-blog-container {
+    width: 90%;
+  }
+
+  .btn-save {
+    padding: 10px 15px;
+  }
+
+  .table-header, .table-data {
+    padding: 8px;
+  }
+
+  .btn-edit, .btn-delete {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

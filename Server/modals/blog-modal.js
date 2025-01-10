@@ -3,7 +3,8 @@ const BlogSchema = new Schema({
     title: { type: String, required: true },
   content: { type: String, required: true },
   category: { type: String, required: true },
-  image: { type: String },
+  imageUrl: { type: String },
+  date: { type: Date, default: Date.now } ,
 })
 
 const Blog = new model('blog' , BlogSchema);

@@ -1,16 +1,20 @@
 const blog = require('../modals/blog-modal');
 const createBlogs = async (req,res) => {
+    console.log("Received request body:", req.body);
+    console.log("Received file:", req.file);
     try {
         const { title, category, content } = req.body;
-        let image = req.file ? req.file.path : null; 
+        let imageUrl = req.file && `/uploads/${req.file.filename}` ; 
+        const date = new Date().toISOString();
         const newBlog = new blog({
             title,
             category,
             content,
-            image,
+            imageUrl,
+            date,
         });
         await newBlog.save();
-        res.status(201).json({ message: "Blog post created successfully!", blog: newBlog });
+        res.status(201).json({ message: "Blog post created successfully!", blog: newBlog, imageUrl });
     }
     catch(error) {
         console.error(error);

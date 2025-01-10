@@ -3,7 +3,6 @@ import "../index-CNfx030l.css";
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Modal from 'react-bootstrap/Modal';
-import Alert from 'react-bootstrap/Alert';
 
 function EnquiryForm() {
   const [showModal, setShowModal] = useState(false);

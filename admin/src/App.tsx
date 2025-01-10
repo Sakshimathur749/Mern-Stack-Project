@@ -14,6 +14,9 @@ import Settings from './pages/Settings';
 import Contact from './pages/Form/Contact';
 import Alerts from './pages/Alerts';
 import DefaultLayout from './layout/DefaultLayout';
+import Postedblog from './pages/Postedblog';
+import Admin from './pages/Admin';
+import EditBlog from './components/Blog/Editblog'
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -32,7 +35,8 @@ function App() {
   ) : (
     <DefaultLayout>
       <Routes>
-        <Route index
+        <Route
+          index
           element={
             <>
               <PageTitle title="eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template" />
@@ -40,6 +44,7 @@ function App() {
             </>
           }
         />
+                <Route path="/edit-blog/:id" element={<EditBlog/>} />
         <Route
           path="/calendar"
           element={
@@ -104,23 +109,23 @@ function App() {
           }
         />
         <Route
-          path="/blog/post"
+          path="/createblog"
           element={
             <>
-              <PageTitle title="Blog | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Create-Blog | TailAdmin - Tailwind CSS Admin Dashboard Template" />
               <Alerts />
             </>
           }
         />
-        {/* <Route
-          path="/ui/buttons"
+        <Route
+          path="/blogs"
           element={
             <>
-              <PageTitle title="Buttons | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Buttons />
+              <PageTitle title="Blogs | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <Postedblog />
             </>
           }
-        /> */}
+        />
         <Route
           path="/auth/signin"
           element={
@@ -130,6 +135,8 @@ function App() {
             </>
           }
         />
+        <Route path="/admin" element={<Admin />} />
+        <Route index element={<SignUp />} />
         <Route
           path="/auth/signup"
           element={
