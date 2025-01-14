@@ -10,8 +10,6 @@ AdminSchema.pre('save', async function (next) {
     this.password = await bcrypt.hash(this.password, salt);
     next();
   });
-AdminSchema.methods.comparePassword = async function (password) {
-    return await bcrypt.compare(password, this.password);
-  };
+
 const Admin = new model('admin' , AdminSchema);
 module.exports = Admin

@@ -1,8 +1,8 @@
-import React, { useState, ReactNode } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header/index';
 import Sidebar from '../components/Sidebar/index';
 interface DefaultLayoutProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
