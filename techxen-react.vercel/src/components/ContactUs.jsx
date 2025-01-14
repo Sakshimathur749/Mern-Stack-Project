@@ -6,7 +6,10 @@ import Icon2 from '../assets/Icon/icon-email.png'
 import Icon3 from '../assets/Icon/icon-location.png'
 
 const ContactUs = () => {
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [errors, setErrors] = useState({});
   const [contact, setContact] = useState({
     firstname:"",
@@ -39,7 +42,8 @@ const ContactUs = () => {
     const { name, value } = e.target; 
     setContact({...contact,[name]:value});
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
-    setSuccessMessage(""); 
+    setSuccessMessage("");
+    setErrorMessage("");
   }
   const handleSubmit = async(e) =>{
     e.preventDefault();
@@ -65,17 +69,25 @@ const ContactUs = () => {
             subject: "",
             message: "",
           });
-          setSuccessMessage("Form submitted successfully!"); 
+          setSuccessMessage("Form submitted successfully!");
+          setShowSuccessModal(true);
         } else {
           console.error("Form submission failed:", data);
+          setErrorMessage("Form submission failed. Please try again.");
+          setShowErrorModal(true);
         }
       } catch (error) {
         console.error("Error submitting form:", error);
-        setSuccessMessage(""); 
+        setErrorMessage("An error occurred while submitting the form.");
+        setShowErrorModal(true);
       }
     }
-
   }
+  const closeModal = () => {
+    setShowSuccessModal(false);
+    setShowErrorModal(false);
+  };
+
   return (
     <div className="contact-page ">
       <div className="space50"></div>
@@ -231,6 +243,26 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+      {showSuccessModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <div className="modal-header">
+              <h2>Success</h2>
+              <button onClick={closeModal} className="close-btn">
+                X
+              </button>
+            </div>
+            <div className="modal-body">
+              <p>{successMessage}</p>
+            </div>
+            <div className="modal-footer">
+              <button onClick={closeModal} className="btn-close">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

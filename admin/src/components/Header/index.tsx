@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import DropdownUser from './DropdownUser';
 import DarkModeSwitcher from './DarkModeSwitcher';
+import logo from '../../images/logo.png'
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
@@ -51,7 +52,7 @@ const Header = (props: {
             </span>
           </button>
 
-          <Link className="block flex-shrink-0 lg:hidden" to="/">
+          <Link className="block flex-shrink-0 lg:hidden" to="/dashboard">
             <img src='' alt="Logo" />
           </Link>
         </div>

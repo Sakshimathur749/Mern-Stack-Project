@@ -223,7 +223,7 @@ const CareerDetails = () => {
               <div className="contact-form-details">
                 <form action="" onSubmit={handleFormSubmit} method="post">
                   <div className="row">
-                    <div className="col-lg-6">
+                    <div className="col-lg-12">
                       <div className="single-input">
                         {error.name && (
                           <p style={{ color: "red", fontSize: "14px" }}>
@@ -240,7 +240,7 @@ const CareerDetails = () => {
                         />
                       </div>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-12">
                       <div className="single-input">
                         {error.phone && (
                           <p style={{ color: "red", fontSize: "14px" }}>
