@@ -15,9 +15,10 @@ const SignIn: React.FC = () => {
     setError('');
 
     try {
-      const token = await login(email, password);
+      const { token, name } = await login(email, password);
+      
       localStorage.setItem('token', token);
-      console.log(token)
+      localStorage.setItem('userName', name); 
       navigate('/dashboard');
     } catch (err: any) {
       setError('Invalid email or password');

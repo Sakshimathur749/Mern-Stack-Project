@@ -9,15 +9,14 @@ import Contact from './pages/Form/Contact';
 import CreateLogin from './pages/CreateBlog';
 import DefaultLayout from './layout/DefaultLayout';
 import Postedblog from './pages/Postedblog';
-import Admin from './pages/AdminLogin';
 import EditBlog from './components/Blog/Editblog';
 import JobApplication from './pages/Form/JobApplication';
-import ProtectedRoute from './components/Protectedroute';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const { pathname } = useLocation();
   const token = localStorage.getItem('token');
+  const isAuthRoute = pathname === '/auth/signin';
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,27 +29,29 @@ function App() {
     return <Navigate to="/dashboard" />;
   }
   if (!token && pathname !== '/auth/signin') {
-    return <Navigate to="/auth/signin" />;
+    return <Navigate to="/auth/signin"/>;
   }
   return loading ? (
     <Loader />
   ) : (
+    isAuthRoute ? (
+      <Routes>
+        <Route path="/auth/signin" element={<SignIn />} />
+      </Routes>
+    ): (
+    <DefaultLayout >
     <Routes>
-      <Route path="/auth/signin" element={<SignIn />} />
-
-      <Route element={<DefaultLayout />}>
-        <Route path='/dashboard' element={<ProtectedRoute element={<ECommerce />} />} />
-        <Route path="/edit-blog/:id" element={<ProtectedRoute element={<EditBlog />} />} />
-        <Route path="/enquieryform" element={<ProtectedRoute element={<Enquiery />} />} />
-        <Route path="/getaquote" element={<ProtectedRoute element={<GetaQuote />} />} />
-        <Route path="/contact" element={<ProtectedRoute element={<Contact />} />} />
-        <Route path="/job-application" element={<ProtectedRoute element={<JobApplication />} />} />
-        <Route path="/createblog" element={<ProtectedRoute element={<CreateLogin />} />} />
-        <Route path="/blogs" element={<ProtectedRoute element={<Postedblog />} />} />
-        <Route path="/admin" element={<ProtectedRoute element={<Admin />} />} />
-      </Route>
+        <Route path='/dashboard' element={<ECommerce />} />
+        <Route path="/edit-blog/:id" element={<EditBlog />} />
+        <Route path="/enquieryform" element={<Enquiery />} />
+        <Route path="/getaquote" element={<GetaQuote />}  />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/job-application" element={<JobApplication />} />
+        <Route path="/createblog" element={<CreateLogin />} />
+        <Route path="/blogs" element={<Postedblog />}  />
     </Routes>
-  );
+    </DefaultLayout>
+  ));
 }
 
 export default App;

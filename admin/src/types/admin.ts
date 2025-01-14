@@ -1,6 +1,6 @@
 const API_URL = 'http://localhost:5000/api/auth';
 
-export const login = async (email: string, password: string): Promise<string> => {
+export const login = async (email: string, password: string): Promise<any> => {
   const response = await fetch(`${API_URL}/login`, {
     method: 'POST',
     headers: {
@@ -14,5 +14,5 @@ export const login = async (email: string, password: string): Promise<string> =>
   }
 
   const data = await response.json();
-  return data.token;
+  return { token: data.token, name: data.admin.name };
 };
