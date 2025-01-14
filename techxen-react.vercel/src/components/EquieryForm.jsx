@@ -34,7 +34,7 @@ function EnquiryForm() {
     if (!formData.firstname) {newErrors.firstname = "First name is required";} else if (!/^[a-zA-Z]+$/.test(formData.firstname)) {newErrors.firstname = "First name should contain only letters";}
     if (!formData.lastname) {newErrors.lastname = "Last name is required";} else if (!/^[a-zA-Z]+$/.test(formData.lastname)) {newErrors.lastname = "Last name should contain only letters";}
     if (!formData.email) {newErrors.email = "Email is required";} else if (!emailRegex.test(formData.email)) {newErrors.email = "Please provide a valid email address";}
-    if (!formData.phone) {newErrors.phone = "Phone number is required";} else if (!phoneRegex.test(formData.phone)) {newErrors.phone = "Phone number should be between 10 and 15 digits";}
+    if (!formData.phone) {newErrors.phone = "Phone number is required";} else if (!phoneRegex.test(formData.phone)) {newErrors.phone = "Phone number should be between 10";}
     if (!formData.message) {newErrors.message = "Message is required";}
 
     setErrors(newErrors);
@@ -88,12 +88,13 @@ function EnquiryForm() {
 
   return (
     <div>
-      <div className="button">
-        <div
+      <div className="buttons">
+        <a
           className="theme-btn1"
           style={{
             position: "fixed",
             top: "350px",
+            marginRight:'10px',
             right: "-60px",
             zIndex: "10",
             transform: 'rotate(270deg)',
@@ -102,7 +103,7 @@ function EnquiryForm() {
           onClick={handleShow}
         >
           Enquiry Form
-        </div>
+        </a>
       </div>
 
       <Modal

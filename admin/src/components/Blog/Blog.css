@@ -18,7 +18,7 @@
     border-radius: 4px;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     position: fixed;
     z-index: 1000;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
@@ -27,7 +27,7 @@
     inset: 100px auto auto 50%;
 }
 .ErrorMessage{
-  backgroundColor: #f44336;
+  background-color: #f44336;
   color: white;
   padding: 12px 30px;
   text-align: center;
@@ -35,7 +35,7 @@
   border-radius: 4px;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   position: absolute;
   z-index: 1000;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
@@ -64,13 +64,12 @@
 
 .table-header {
   padding: 12px;
-  text-align: left;
+  text-align: center;
   font-size: 16px;
   color: black;
   font-weight: bold;
   text-transform: uppercase;
 }
-
 .table-row:nth-child(even) {
   background-color: #f9f9f9;
 }
@@ -82,7 +81,7 @@
 
 .table-data {
   padding: 12px;
-  text-align: left;
+  text-align: center;
   font-size: 16px;
   color: #333;
 }

@@ -27,13 +27,13 @@ const Blogs = () => {
 
     fetchBlogs();
   }, []); 
-  const [expandedBlogId, setExpandedBlogId] = useState(null); // Track which blog is expanded
+  const [expandedBlogId, setExpandedBlogId] = useState(null);
 
   const handleReadMore = (id) => {
-    setExpandedBlogId(id); // Toggle the expanded state for the specific blog
+    setExpandedBlogId(id);
   };
   const removeHtmlTags = (content) => {
-    return content.replace(/<[^>]+>/g, ''); // Regular expression to remove all HTML tags
+    return content.replace(/<[^>]+>/g, ''); 
   };
 
 
@@ -50,7 +50,7 @@ const Blogs = () => {
       <div className="container">
         <div className="row">
           {blogs.map((blog) => (
-            <div className="col-lg-6" key={blog._id}>
+            <div className="col-lg-6" key={blog.slug}>
               <div className="blog2-box">
                 <div className="image">
                 <img src={`http://localhost:5173/src/images${blog.imageUrl}` || "default-image.jpg"} alt={blog.title} />
@@ -74,21 +74,21 @@ const Blogs = () => {
                     </a>
                   </div>
                   <h4>
-                    <a href={`/blog-details/${blog._id}`}>
+                    <a href={`/blog-details/${blog.slug}`}>
                       {blog.title}
                     </a>
                   </h4>
                   <div className="space16"></div>
                   <p>
                   {removeHtmlTags(blog.content).length > 150 
-                      ? expandedBlogId === blog._id 
-                        ? removeHtmlTags(blog.content) // Show full content if expanded
+                      ? expandedBlogId === blog.slug 
+                        ? removeHtmlTags(blog.content)
                         : removeHtmlTags(blog.content).substring(0, 150) + '...' // Truncate if not expanded
                       : removeHtmlTags(blog.content)} 
                   </p>
                   <div className="space16"></div>
-                  <a className="learn" href={`/blog-details/${blog._id}`}>
-                    <Link to={`/blog-details/${blog._id}`} style={{ color: 'darkslategray', paddingRight: '10px' }}>
+                  <a className="learn" href={`/blog-details/${blog.slug}`}>
+                    <Link to={`/blog-details/${blog.slug}`} style={{ color: 'darkslategray', paddingRight: '10px' }}>
                       Read More
                     </Link>
                     <span>

@@ -4,6 +4,7 @@ export type blog = {
     date:string;
     content: string;
     category: string;
-    _id: string;
+    slug: string;
+    _id:string
   };
   

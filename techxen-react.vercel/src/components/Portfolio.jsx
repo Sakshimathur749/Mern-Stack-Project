@@ -58,6 +58,37 @@ const Products = () => {
               </Link>
             </div>
           </div>
+          <div
+            className="col-lg-4 col-md-6"
+            data-aos="zoom-in-up"
+            data-aos-duration="1200"
+          >
+            <div className="work4-box heading4">
+              <Link to='https://loanbuddha.co.in/'>
+              <span className="after">Project 02</span>
+              <h4>
+                <a href="https://loanbuddha.co.in/">Loan Buddha</a>
+              </h4>
+              <div className="space16"></div>
+              <p>
+              LoanBuddha offers customized financial solutions, including personal, home, and business loans, with access to top lenders. The platform ensures a quick, seamless, and hassle-free loan application process.
+              </p>
+              <div className="space16"></div>
+              <div style={{ textAlign: "right" }}>
+                  <a
+                    className="learn"
+                    style={{ marginLeft: "auto", textDecoration: "underline" }}
+                    href="https://loanbuddha.co.in/"
+                  >
+                    Visit{" "}
+                    <span>
+                      <i className="bi bi-arrow-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -274,7 +274,7 @@ const DigtialAttendance = () => {
                   </li>
                 </ul>
                 <div className="space30"></div>
-                <div className="button" style={{ textAlign: "center" }}>
+                <div className="buttons" style={{ textAlign: "center" }}>
                   <a
                     className="theme-btn1"
                     style={{ margin: "0px", display: "block" }}

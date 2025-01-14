@@ -1,52 +1,25 @@
-// import  jwt from 'jsonwebtoken'
-// import UserModel from '../modals/user-modal.js'
+const jwt = require('jsonwebtoken');
 
+const protect = (req, res, next) => {
+  const token = req.header('Authorization')?.replace('Bearer ', '');
+  if (!token) {
+    return res.status(401).json({ message: 'Access denied. No token provided.' });
+  }
 
-// const isAdmin=async(req,res,next)=>{
-//     try {
-//          const token=req.cookies.token
-//          if (!token) {
-//             return res.status(401).json({messsage:"'Unauthorized: No token provided'"})
-//          }
+  try {
+    const decoded = jwt.verify(token,  process.env.JWT_SECRET);
+    req.user = decoded; 
+    next();
+  } catch (error) {
+    res.status(400).json({ message: 'Invalid token' });
+  }
+};
 
-//          const decoded= jwt.verify(token,process.env.JWT_SECRETE)
-//          const user=await UserModel.findById(decoded.userId)
-//          if (!user) {
-//             return res.status(401).json({messsage:"'user not found'"})
-//          }
+const adminOnly = (req, res, next) => {
+  if (req.user.email !== process.env.ADMIN_EMAIL) {
+    return res.status(403).json({ message: 'Access denied. Admins only.' });
+  }
+  next();
+};
 
-//          if (user.role !=='admin') {
-//             return res.status(403).json({messsage:'Unauthorized: User is not an admin'})
-//          }
-//        req.user=user
-//          next()
-      
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
-
-// const IsUser=async(req,res,next)=>{
-//    try {
-//       const token=req.cookies.token
-//       if (!token) {
-//          return res.status(401).json({messsage:"'Unauthorized: No token provided'"})
-//       }
-
-//       const decoded= jwt.verify(token,process.env.JWT_SECRETE)
-//       const user=await UserModel.findById(decoded.userId)
-//       if (!user) {
-//          return res.status(401).json({messsage:"'user not found'"})
-//       }
-
-    
-//     req.user=user
-//       next()
-   
-//  } catch (error) {
-//      console.log(error)
-//  }
-// }
-
-
-// module.exports ={isAdmin,IsUser}
+module.exports = { protect, adminOnly };

@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../index-CNfx030l.css";
 
+
 const Blog = () => {
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/post/blog'); 
+        if (!response.ok) {
+          throw new Error('Failed to fetch blogs');
+        }
+        const data = await response.json();
+        const sortedBlogs = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        setBlogs(sortedBlogs.slice(0, 3));
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <div className="blog sp">
       <div className="container">
@@ -23,130 +43,48 @@ const Blog = () => {
         </div>
         <div className="space30"></div>
         <div className="row">
-          <div className="col-lg-4">
-            <div
-              className="blog-box"
-              data-aos="zoom-in-up"
-              data-aos-duration="1100"
-            >
-              <div className="image image-anime">
-                <img
-                  src="https://techxen-react.vercel.app/assets/img/blog/blog-img1.png"
-                  alt=""
-                />
-              </div>
-              <div className="heading">
-                <div className="tags">
-                  <a href="/blog">
+          {blogs.length > 0 ? (
+            blogs.map((blog, index) => (
+              <div className="col-lg-4" key={index}>
+                <div
+                  className="blog-box"
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1100"
+                >
+                  <div className="image image-anime">
                     <img
-                      src="https://techxen-react.vercel.app/assets/img/icons/blog-icon1.png"
-                      alt=""
-                    />{" "}
-                    John William
-                  </a>
-                  <a href="/blog">
-                    <img
-                      src="https://techxen-react.vercel.app/assets/img/icons/blog-icon2.png"
-                      alt=""
-                    />{" "}
-                    Feb 25, 24
-                  </a>
+                      src={`http://localhost:5173/src/images${blog.imageUrl}`} 
+                      alt={blog.title}
+                    />
+                  </div>
+                  <div className="heading">
+                    <div className="tags">
+                      <a href="/blog">
+                        <img
+                          src="https://techxen-react.vercel.app/assets/img/icons/blog-icon2.png"
+                          alt=""
+                        />{" "}
+                        {new Date(blog.date).toLocaleDateString()} 
+                      </a>
+                    </div>
+                    <h4>
+                      <a href={`/blog-details/${blog.slug}`}>
+                        {blog.title} 
+                      </a>
+                    </h4>
+                    <a className="learn" href={`/blog-details/${blog.slug}`}>
+                      Learn More{" "}
+                      <span>
+                        <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                  </div>
                 </div>
-                <h4>
-                  <a href="/blog-details">
-                    Demystifying Blockchain: How It is Revolutionising
-                    Industries.
-                  </a>
-                </h4>
-                <a className="learn" href="/blog-details">
-                  Learn More{" "}
-                  <span>
-                    <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
-                  </span>
-                </a>
               </div>
-            </div>
-          </div>
-          <div className="col-lg-4">
-            <div className="blog-box" data-aos="zoom-in-up" data-aos-duration="900">
-              <div className="image image-anime">
-                <img
-                  src="https://techxen-react.vercel.app/assets/img/blog/blog-img2.png"
-                  alt=""
-                />
-              </div>
-              <div className="heading">
-                <div className="tags">
-                  <a href="/blog">
-                    <img
-                      src="https://techxen-react.vercel.app/assets/img/icons/blog-icon1.png"
-                      alt=""
-                    />{" "}
-                    John William
-                  </a>
-                  <a href="/blog">
-                    <img
-                      src="https://techxen-react.vercel.app/assets/img/icons/blog-icon2.png"
-                      alt=""
-                    />{" "}
-                    Feb 25, 24
-                  </a>
-                </div>
-                <h4>
-                  <a href="/blog-details">
-                    Cybersecurity Essentials: Protecting Your Business{" "}
-                  </a>
-                </h4>
-                <a className="learn" href="/blog-details">
-                  {" "}
-                  Learn More{" "}
-                  <span>
-                    <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4">
-            <div className="blog-box" data-aos="zoom-in-up" data-aos-duration="700">
-              <div className="image image-anime">
-                <img
-                  src="https://techxen-react.vercel.app/assets/img/blog/blog-img3.png"
-                  alt=""
-                />
-              </div>
-              <div className="heading">
-                <div className="tags">
-                  <a href="/blog">
-                    <img
-                      src="https://techxen-react.vercel.app/assets/img/icons/blog-icon1.png"
-                      alt=""
-                    />{" "}
-                    John William
-                  </a>
-                  <a href="/blog">
-                    <img
-                      src="https://techxen-react.vercel.app/assets/img/icons/blog-icon2.png"
-                      alt=""
-                    />{" "}
-                    Feb 25, 24
-                  </a>
-                </div>
-                <h4>
-                  <a href="/blog-details">
-                    The Future of Work: Embracing Remote Collaboration Tools
-                  </a>
-                </h4>
-                <a className="learn" href="/blog-details">
-                  {" "}
-                  Learn More{" "}
-                  <span>
-                    <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
+            ))
+          ) : (
+            <p>No blogs available.</p> 
+          )}
         </div>
       </div>
     </div>

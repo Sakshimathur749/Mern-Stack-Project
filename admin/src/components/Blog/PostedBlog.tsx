@@ -29,7 +29,6 @@ const PostedBlog = () => {
         const data = await response.json();
         
         const sortedBlogs = data.sort((a: blog, b: blog) => new Date(b.date).getTime() - new Date(a.date).getTime());
-        
         setBlogs(sortedBlogs); 
         } catch (error: any) {
         setMessage({ type: 'error', text: 'Failed to fetch data' }); 
@@ -48,12 +47,12 @@ const PostedBlog = () => {
     }
   }, [message]);
 
-  const handleEdit = (id: string) => {
-    navigate(`/edit-blog/${id}`);  
+  const handleEdit = (slug: string) => {
+    navigate(`/edit-blog/${slug}`);  
   };
 
-  const toggleDeletePopup = (id: string) => {
-    setSelectedBlogId(id);  
+  const toggleDeletePopup = (slug: string) => {
+    setSelectedBlogId(slug);  
     setShowDeletePopup(true); 
   };
 
@@ -68,7 +67,7 @@ const PostedBlog = () => {
           throw new Error('Failed to delete blog');
         }
 
-        setBlogs(blogs.filter(blog => blog._id !== selectedBlogId));
+        setBlogs(blogs.filter(blog => blog.slug !== selectedBlogId));
         setMessage({ type: 'success', text: 'Blog successfully deleted!' }); 
         setShowDeletePopup(false); 
         setSelectedBlogId(null);  
@@ -86,7 +85,7 @@ const PostedBlog = () => {
   };
 
   return (
-    <div className="posted-blog-container mt-5">
+    <div className="mt-5">
       {message && message.type === 'success' && (
         <div className='successMessage'>
           {message.text}
@@ -103,6 +102,7 @@ const PostedBlog = () => {
       <table className="blog-table">
         <thead>
           <tr>
+          <th className="table-header">S.No</th>
             <th className="table-header">Title</th>
             <th className="table-header">Date</th>
             <th className="table-header">Category</th>
@@ -110,20 +110,21 @@ const PostedBlog = () => {
           </tr>
         </thead>
         <tbody>
-          {blogs.map((b) => (
-            <tr key={b._id} className="table-row">
-              <td className="table-data">{b.title}</td>
-              <td className="table-data">{formatDate(b.date)}</td> 
-              <td className="table-data">{b.category}</td>
+          {blogs.map((blog,index) => (
+            <tr key={blog._id} className="table-row">
+              <td className="table-data">{index + 1}</td> 
+              <td className="table-data">{blog.title}</td>
+              <td className="table-data">{formatDate(blog.date)}</td> 
+              <td className="table-data">{blog.category}</td>
               <td className="table-data">
                 <button
                   className="btn-edit"
-                  onClick={() => handleEdit(b._id)}  >
+                  onClick={() => handleEdit(blog.slug)}  >
                   Edit
                 </button>
                 <button
                   className="btn-delete"
-                  onClick={() => toggleDeletePopup(b._id)} 
+                  onClick={() => toggleDeletePopup(blog.slug)} 
                 >
                   Delete
                 </button>

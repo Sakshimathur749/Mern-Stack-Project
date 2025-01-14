@@ -83,7 +83,7 @@ Footer = () => {
                   <a href="/about">About Us </a>
                 </li>
                 <li>
-                  <a href="/service">Our Services</a>
+                  <a href="/services">Our Services</a>
                 </li>
                 <li>
                   <a href="/blog">Blog &amp; News</a>

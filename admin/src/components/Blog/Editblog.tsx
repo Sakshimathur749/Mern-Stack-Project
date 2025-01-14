@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import 'quill/dist/quill.snow.css';
 import Quill from 'quill';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
 import './Blog.css';
 
 interface QuillEditorDiv extends HTMLDivElement {
@@ -13,11 +13,13 @@ const EditBlog = () => {
     title: string;
     category: string;
     content: string;
+    slug:string;
     imageUrl: string | File;
   }>({
     title: '',
     category: '',
     content: '',
+    slug:'',
     imageUrl: '',
   });
   const [error, setError] = useState<string | null>(null);
@@ -26,6 +28,11 @@ const EditBlog = () => {
   const navigate = useNavigate();
   const editorRef = useRef<QuillEditorDiv | null>(null);  
   useEffect(() => {
+    if (!id) {
+      console.error('id is undefined or invalid!');
+      return;
+    }
+  
     const fetchData = async () => {
       try {
         const response = await fetch(`http://localhost:5000/api/post/blog/${id}`, {
@@ -34,11 +41,11 @@ const EditBlog = () => {
             'Content-Type': 'application/json',
           },
         });
-
+  
         if (!response.ok) {
           throw new Error('Failed to fetch blog data');
         }
-
+  
         const data = await response.json();
         setBlog({
           ...data,
@@ -50,9 +57,10 @@ const EditBlog = () => {
         setLoading(false);
       }
     };
-
+  
     fetchData();
   }, [id]);
+  
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files ? e.target.files[0] : null;
@@ -65,12 +73,13 @@ const EditBlog = () => {
     event.preventDefault();
     const formData = new FormData();
     formData.append('title', blog.title);
+    formData.append('slug', blog.slug);
     formData.append('category', blog.category);
     formData.append('content', blog.content);
     if (blog.imageUrl instanceof File) {
-      formData.append('image', blog.imageUrl); // Send the file as a FormData entry
+      formData.append('image', blog.imageUrl);
     } else {
-      formData.append('imageUrl', blog.imageUrl); // Send the relative path (no full URL needed)
+      formData.append('imageUrl', blog.imageUrl);
     }
     try {
       const response = await fetch(`http://localhost:5000/api/post/blog/${id}`, {
@@ -179,7 +188,6 @@ const EditBlog = () => {
 
         <div className="form-group">
           <label>Content</label>
-          {/* Quill Editor */}
           <div ref={editorRef} id="editor"></div>
         </div>
 

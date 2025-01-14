@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import './MediaQuerie.css';
 import "../index-CNfx030l.css";
-import Icon1 from '../assets/Icon/icon-DigitalCard-50.png'
+import Icon1 from '../assets/Icon/icon-smm-50.png'
 import Icon2 from '../assets/Icon/icon-Graphic-50.png'
 import Icon3 from '../assets/Icon/icon-App-50.png'
 import Icon4 from '../assets/Icon/icon-Ecom-50.png'
@@ -90,11 +90,11 @@ const Services = () => {
                                 <img src={Icon1} alt="" />
                             </div>
                             <div className="heading1">
-                                <h4><a href="/service/Digital-Card">Digital Card Services</a></h4>
+                                <h4><a href="/service/Social-Media">Social Media Marketing</a></h4>
                                 <div style={{ height: '16px' }}></div>
-                                <p>Our digital card services provide innovative solutions for businesses wanting to create easy-to-share and eco-friendly digital business cards. We design customizable cards that leave a lasting impression.</p>
+                                <p>Leverage the power of social media to connect with your audience and build your brand. Our social media marketing services include content creation, community management, and targeted advertising campaigns across all major platforms. </p>
                                 <div style={{ height: '16px' }} ></div>
-                                <a className="learn" href="/service/Digital-Card">Learn More <span><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></span></a>
+                                <a className="learn" href="/service/Social-Media">Learn More <span><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></span></a>
                             </div>
                         </div> 
                     </Col>

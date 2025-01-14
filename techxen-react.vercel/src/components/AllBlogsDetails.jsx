@@ -1,18 +1,20 @@
 import React, { useEffect,useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../index-CNfx030l.css";
 import "../App.css"
 
 const AllBlogsDetails = () => {
-  const { id } = useParams(); // Extract the blog id from URL params
+  const { slug } = useParams();
   const [blogData, setBlogData] = useState(null);
   const [error, setError] = useState(null);
+  const [allBlogs, setAllBlogs] = useState([]); 
+  const [recentBlogs, setRecentBlogs] = useState([]); 
   const [loading, setLoading] = useState(true); 
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
-        setLoading(true); // Set loading to true when starting fetch
-        const response = await fetch(`http://localhost:5000/api/post/blog/${id}`, {
+        setLoading(true); 
+        const response = await fetch(`http://localhost:5000/api/post/blog/${slug}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -24,20 +26,37 @@ const AllBlogsDetails = () => {
         }
 
         const data = await response.json();
-        setBlogData(data); // Set the fetched blog data
+        setBlogData(data);
       } catch (error) {
         setError(error.message || 'Something went wrong');
       } finally {
-        setLoading(false); // Set loading to false when done
+        setLoading(false);
       }
     };
 
-    fetchBlogData(); // Call the function to fetch data
-  }, [id]); // Re-run this effect when `id` changes
+    fetchBlogData(); 
+  }, [slug]); 
+  useEffect(() => {
+    const fetchAllBlogs = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/post/blog'); 
+        if (!response.ok) {
+          throw new Error('Failed to fetch all blogs');
+        }
+        const data = await response.json();
+        setAllBlogs(data);
+        const sortedBlogs = data.sort((a, b) => new Date(b.date) - new Date(a.date)); 
+        setRecentBlogs(sortedBlogs.slice(0, 5)); 
+      } catch (error) {
+        console.error(error.message || 'Failed to fetch all blogs');
+      }
+    };
+
+    fetchAllBlogs();
+  }, []); 
   const createMarkup = (content) => {
-    return { __html: content }; // This will allow HTML to render in the component
+    return { __html: content }; 
   };
-  // Change the document title dynamically based on the blog data
   useEffect(() => {
     if (blogData) {
       document.title = blogData.title ? `${blogData.title} | My Blog` : "Blog Details";
@@ -45,11 +64,11 @@ const AllBlogsDetails = () => {
   }, [blogData]);
 
   if (loading) {
-    return <div>Loading blog details...</div>; // Show loading message
+    return <div>Loading blog details...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>; // Show error message if something goes wrong
+    return <div>Error: {error}</div>; 
   }
 
 
@@ -66,7 +85,7 @@ const AllBlogsDetails = () => {
                   <div className="details-post-area">
                     <div className="image">
                       <img
-                        src={`http://localhost:5173/src/images${blogData.imageUrl}` || '/path/to/default-image.jpg'} // Use default image if imageUrl is not present
+                        src={`http://localhost:5173/src/images${blogData.imageUrl}` || '/path/to/default-image.jpg'} 
                         alt={blogData.title}
                       />
                     </div>
@@ -100,28 +119,55 @@ const AllBlogsDetails = () => {
                     </div>
                   </div>
                 ) : (
-                  <div>No blogData data available.</div> // Fallback in case there's no data
+                  <div>No blogData data available.</div>
                 )}
             </article>
             <div className="space50"></div>
           </div>
         </div>
         <div className="col-lg-4">
-          <div className="sidebar-box-area mb-40">
+          {/* <div className="sidebar-box-area mb-40">
             <h3>Search by Keyword</h3>
             <div className="search">
-              <input type="text" placeholder="Type keyword here" />
+              <input type="text" placeholder="Type keyword here" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}  />
               <div className="button">
                 <button>
                   <i className="bi bi-search"></i>
                 </button>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="sidebar-box-area sidebar-bg mb-40">
             <h3>Recent Blogs</h3>
             <div className="sidebar-blog-boxs">
-              {/* Recent blog sidebar items */}
+            {recentBlogs.length > 0 ? (
+                  recentBlogs.map((blog) => (
+                    <Link to={`/blog-details/${blog._id}`} key={blog._id} className="sidebar-blogs-link">
+                    <div className="sidebar-blogs">
+                      <div className="image">
+                        <img
+                          src={`http://localhost:5173/src/images${blog.imageUrl || "/assets/img/blog/blog-details-sidebar1.png"}`} // Replace with blog image or fallback image
+                          alt={blog.title}
+                        />
+                      </div>
+                      <div className="heading">
+                        <a href="#" className="date">
+                        <img
+                        src="https://techxen-react.vercel.app/assets/img/icons/date.png"
+                        alt=""
+                      />{" "}
+                          {new Date(blog.date).toLocaleDateString()}
+                        </a>
+                        <h5>
+                          <a href={`/blog/${blog._id}`}>{blog.title}</a>
+                        </h5>
+                      </div>
+                    </div>
+                    </Link>
+                  ))
+                ) : (
+                  <div>No recent blogs available.</div>
+                )}
             </div>
           </div>
         </div>

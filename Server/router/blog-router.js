@@ -53,17 +53,20 @@ router.route("/blog").get(async (req, res) => {
       res.status(500).json({ message: 'Failed to retrieve blogs', error: error.message });
     }
   });
-  router.route("/blog/:id").put(upload.single('image'), async (req, res) => {
+  router.route("/blog/:slug").put(upload.single('image'), async (req, res) => {
     try {
-      const { id } = req.params;
+      const { slug } = req.params;
       const { title, category, content } = req.body;
         let imageUrl = req.body.imageUrl || ''; 
       if (req.file) {
         imageUrl = `/uploads/${req.file.filename}`;
       }
   
-      const blog = await Blog.findByIdAndUpdate(id, { title, category, content, imageUrl }, { new: true });
-  
+      const blog = await Blog.findOneAndUpdate(
+        { slug: slug },  
+        { title, category, content, imageUrl },
+        { new: true }  
+      );
       if (!blog) {
         return res.status(404).json({ message: "Blog post not found" });
       }
@@ -76,22 +79,25 @@ router.route("/blog").get(async (req, res) => {
       res.status(500).json({ message: "Error updating blog post", error: error.message });
     }
   });
- router.route("/blog/:id").get(async (req, res) => {
+ router.route("/blog/:slug").get(async (req, res) => {
   try {
-    const blog = await Blog.findById(req.params.id);  
+    const { slug } = req.params; 
+    const blog = await Blog.findOne({ slug: slug });
     if (!blog) {
       return res.status(404).json({ message: "Blog not found" });
+    }
+    if (blog.imageUrl) {
+      blog.imageUrl = `/uploads/${path.basename(blog.imageUrl)}`;  // Correct URL path
     }
     res.status(200).json(blog);
   } catch (error) {
     res.status(500).json({ message: "Error fetching blog", error: error.message });
   }
 });
-router.route("/blog/:id").delete(async (req, res) => {
+router.route("/blog/:slug").delete(async (req, res) => {
   try {
-    const { id } = req.params;
-
-    const blog = await Blog.findById(id);
+    const { slug } = req.params;
+    const blog = await Blog.findOne({ slug: slug });
     if (!blog) {
       return res.status(404).json({ message: "Blog post not found" });
     }
@@ -100,11 +106,10 @@ router.route("/blog/:id").delete(async (req, res) => {
       const imagePath = path.join(__dirname, "../../admin/src/images/uploads", path.basename(blog.imageUrl));
       if (fs.existsSync(imagePath)) {
         fs.unlinkSync(imagePath);
-        console.log("Image deleted:", imagePath);
       }
     }
 
-    await Blog.findByIdAndDelete(id);
+    await Blog.findOneAndDelete({ slug: slug });
 
     res.status(200).json({ message: "Blog post and associated image deleted successfully!" });
   } catch (error) {

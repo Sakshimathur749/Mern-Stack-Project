@@ -3,8 +3,8 @@ const createBlogs = async (req,res) => {
     console.log("Received request body:", req.body);
     console.log("Received file:", req.file);
     try {
-        const { title, category, content } = req.body;
-        let imageUrl = req.file && `/uploads/${req.file.filename}` ; 
+        const { title, category, content ,slug} = req.body;
+        let imageUrl = req.file &&`/uploads/${req.file.filename}` ; 
         const date = new Date().toISOString();
         const newBlog = new blog({
             title,
@@ -12,6 +12,7 @@ const createBlogs = async (req,res) => {
             content,
             imageUrl,
             date,
+            slug
         });
         await newBlog.save();
         res.status(201).json({ message: "Blog post created successfully!", blog: newBlog, imageUrl });

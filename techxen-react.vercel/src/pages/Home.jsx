@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Main from '../components/Main'
-import Box from '../components/Box'
 import Ourcompany from '../components/Ourcompany'
 import Services from '../components/Services'
 import ItSolution from '../components/ItSolution'
-import Ourproject from '../components/Ourproject'
 import Testimonials from '../components/Testimonials'
 import Blog from '../components/Blog'
-import { useLocation } from 'react-router'
 import { Helmet } from 'react-helmet'
 import Brands from '../components/Brands'
 
@@ -32,8 +29,6 @@ const Home = () => {
       <Ourcompany />
       <Services />
       <ItSolution />
-      {/* <Ourproject/>
-        <PrincingPlan/> */}
       <Testimonials />
       <Blog />
     </div>

@@ -1,26 +1,24 @@
 import { useEffect, useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Loader from './common/Loader';
 import PageTitle from './components/PageTitle';
-import SignIn from './pages/Authentication/SignIn';
+import SignIn from './pages/Authentication/LoginIn';
 import SignUp from './pages/Authentication/SignUp';
-import Calendar from './pages/Calendar';
-import Chart from './pages/Chart';
 import ECommerce from './pages/Dashboard/ECommerce';
 import Enquiery from './pages/Form/Enquiery';
 import GetaQuote from './pages/Form/GetaQuote';
-import Profile from './pages/Profile';
-import Settings from './pages/Settings';
 import Contact from './pages/Form/Contact';
-import Alerts from './pages/Alerts';
+import CreateLogin from './pages/CreateBlog';
 import DefaultLayout from './layout/DefaultLayout';
 import Postedblog from './pages/Postedblog';
-import Admin from './pages/Admin';
-import EditBlog from './components/Blog/Editblog'
+import Admin from './pages/AdminLogin';
+import EditBlog from './components/Blog/Editblog';
+import JobApplication from './pages/Form/JobApplication';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const { pathname } = useLocation();
+  const isAuthenticated = localStorage.getItem('isAuthenticated');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,123 +27,25 @@ function App() {
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, []);
-
+  if (!isAuthenticated && pathname !== '/auth/signin') {
+    return <Navigate to="/auth/signin" />;
+  }
   return loading ? (
     <Loader />
   ) : (
     <DefaultLayout>
       <Routes>
-        <Route
-          index
-          element={
-            <>
-              <PageTitle title="eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <ECommerce />
-            </>
-          }
-        />
-                <Route path="/edit-blog/:id" element={<EditBlog/>} />
-        <Route
-          path="/calendar"
-          element={
-            <>
-              <PageTitle title="Calendar | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Calendar />
-            </>
-          }
-        />
-        <Route
-          path="/profile"
-          element={
-            <>
-              <PageTitle title="Profile | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Profile />
-            </>
-          }
-        />
-        <Route
-          path="/enquieryform"
-          element={
-            <>
-              <PageTitle title="Enquiery Form | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Enquiery />
-            </>
-          }
-        />
-        <Route
-          path="/getaquote"
-          element={
-            <>
-              <PageTitle title="Get a Quote | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <GetaQuote />
-            </>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <>
-              <PageTitle title="Contact Form | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Contact />
-            </>
-          }
-        />
-        <Route
-          path="/settings"
-          element={
-            <>
-              <PageTitle title="Settings | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Settings />
-            </>
-          }
-        />
-        <Route
-          path="/chart"
-          element={
-            <>
-              <PageTitle title="Basic Chart | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Chart />
-            </>
-          }
-        />
-        <Route
-          path="/createblog"
-          element={
-            <>
-              <PageTitle title="Create-Blog | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Alerts />
-            </>
-          }
-        />
-        <Route
-          path="/blogs"
-          element={
-            <>
-              <PageTitle title="Blogs | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Postedblog />
-            </>
-          }
-        />
-        <Route
-          path="/auth/signin"
-          element={
-            <>
-              <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <SignIn />
-            </>
-          }
-        />
+        <Route path='/dashboard' element={<ECommerce />}/>
+        <Route path="/edit-blog/:id" element={<EditBlog />} />
+        <Route path="/enquieryform" element={<Enquiery />} />
+        <Route path="/getaquote" element={<GetaQuote />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/job-application" element={<JobApplication />} />
+        <Route path="/createblog" element={<CreateLogin />} />
+        <Route path="/blogs" element={<Postedblog />} />
+        <Route path="/auth/signin" element={<SignIn />} />
+        <Route path="/auth/signup" element={<SignUp />} />
         <Route path="/admin" element={<Admin />} />
-        <Route index element={<SignUp />} />
-        <Route
-          path="/auth/signup"
-          element={
-            <>
-              <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <SignUp />
-            </>
-          }
-        />
       </Routes>
     </DefaultLayout>
   );

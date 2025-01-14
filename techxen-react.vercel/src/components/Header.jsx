@@ -1,6 +1,4 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -24,7 +22,7 @@ function Header() {
 
   return (
     <>
-      <Navbar expand="xl"  style={{backgroundColor:'#ffff' ,position: 'sticky',top: '0px', zIndex:'10'}}>
+      <Navbar expand="xl"  style={{backgroundColor:'#ffff' ,position: 'sticky',top: '-1px', zIndex:'10'}}>
         <Container fluid style={{ height: "70px" }}>
           <Navbar.Brand href="/" onClick={() => window.location.reload()}>
             <img

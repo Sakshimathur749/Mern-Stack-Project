@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import 'quill/dist/quill.snow.css'; 
 import Quill from 'quill';
-import './Blog.css'
-import { Modal, ModalBody, ModalFooter, ModalHeader } from 'react-bootstrap';
+import './Blog.css';
 const Blog: React.FC = () => {
     const [title, setTitle] = useState<string>('');
     const [category, setCategory] = useState<string>('');
+    const [slug, setSlug] = useState<string>(''); 
     const [content, setContent] = useState<string>('');
     const [image, setImage] = useState<File | null>(null);
     const [imageUrl, setImageUrl] = useState<string>('');
@@ -20,6 +20,7 @@ const Blog: React.FC = () => {
       category: '',
       content: '',
       imageUrl: '',
+      slug: '', 
     });
 
     useEffect(() => {
@@ -44,6 +45,23 @@ const Blog: React.FC = () => {
           setTimeout(() => setMessage(null), 3000);
         } 
     }, [message])
+
+    const generateSlug = (title: string) => {
+      return title
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '')  // Remove non-alphanumeric characters
+        .replace(/\s+/g, '-')       // Replace spaces with hyphens
+        .replace(/-+/g, '-');       // Replace multiple hyphens with one
+    };
+  
+    const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setTitle(e.target.value);
+      setSlug(generateSlug(e.target.value));  // Auto-generate slug from title
+    };
+  
+    const handleSlugChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSlug(e.target.value);  // Allow manual slug input
+    };
     const handleImageChange = (e:any) => {
       const file = e.target.files[0];
       if(file){
@@ -61,7 +79,7 @@ const Blog: React.FC = () => {
       dataTosend.append('category', category);
       dataTosend.append('content', content);
       dataTosend.append('image', image);
-    
+      dataTosend.append('slug', slug);  
       try {
         const endpoint = editingBlogId
           ? `http://localhost:5000/api/post/blog/${editingBlogId}`
@@ -87,21 +105,19 @@ const Blog: React.FC = () => {
           category,
           content,
           imageUrl: data.imageUrl || '',
+          slug: data.slug || '',
         });
     
         setShowModal(true);
         setIsEdit(false);
-    
+        setSlug(''); 
         setTitle('');
         setCategory('');
-        setContent('');
-        setImage(null); // Reset image state
-        setImageUrl(''); // Reset imageUrl (clear image preview)
-        
+        setImage(null); 
+        setImageUrl('');
         const imageInput = document.getElementById('image') as HTMLInputElement;
-        if (imageInput) imageInput.value = ''; // Clear file input
-        
-        quillRef.current?.setContents([]); // Clear the editor content
+        if (imageInput) imageInput.value = ''; 
+        quillRef.current?.setContents([]); 
       } catch (error) {
         setErrorMessage('Failed to create blog post');
       }
@@ -139,8 +155,6 @@ const Blog: React.FC = () => {
           {message.text}
         </div>
       )}
-
-      {/* Error Message */}
       {message && message.type === 'error' && (
         <div className='ErrorMessage' >
           {message.text}
@@ -149,40 +163,29 @@ const Blog: React.FC = () => {
 
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: '30px' }}>
-          <label
-            style={{
-              fontSize: '20px',
-              fontWeight: '400',
-              padding: '10px',
-              display: 'block',
-              marginBottom: '8px',
-              color: '#333',
-            }}
-            htmlFor="title"
-          >
-            Title:
-          </label>
+        <label style={{ fontSize: '20px', fontWeight: '400', padding: '10px', display: 'block', marginBottom: '8px', color: '#333' }} htmlFor="title">Title:</label>
           <input
-            style={{
-              padding: '10px 20px',
-              width: '100%',
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-              fontSize: '16px',
-              color: '#333',
-              backgroundColor: '#fff',
-              transition: 'all 0.3s ease',
-            }}
+            style={{ padding: '10px 20px', width: '100%', border: '1px solid #ccc', borderRadius: '4px', fontSize: '16px', color: '#333', backgroundColor: '#fff', transition: 'all 0.3s ease' }}
             type="text"
             id="title"
             value={title}
-            onChange={(e) => {
-              setTitle(e.target.value);
-              handleInputChange();
-            }}
+            onChange={handleTitleChange}
             required
           />
         </div>
+
+        <div style={{ marginBottom: '30px' }}>
+          <label style={{ fontSize: '20px', fontWeight: '400', padding: '10px', display: 'block', marginBottom: '8px', color: '#333' }} htmlFor="slug">Slug:</label>
+          <input
+            style={{ padding: '10px 20px', width: '100%', border: '1px solid #ccc', borderRadius: '4px', fontSize: '16px', color: '#333', backgroundColor: '#fff', transition: 'all 0.3s ease' }}
+            type="text"
+            id="slug"
+            value={slug}
+            onChange={handleSlugChange}
+            required
+          />
+        </div>
+
 
         <div style={{ marginBottom: '30px' }}>
           <label
@@ -292,84 +295,6 @@ const Blog: React.FC = () => {
           Create Blog Post
         </button>
       </form>
-
-      {/* <Modal show={showModal} onHide={() => setShowModal(false)} centered>
-        <ModalHeader>
-          <h3>{isEdit ? "Edit Blog Post" : "Success"}</h3>
-        </ModalHeader>
-        <ModalBody>
-          <div
-            style={{
-              padding: '10px',
-              backgroundColor: '#4CAF50',
-              color: 'white',
-              textAlign: 'center',
-              borderRadius: '4px',
-              marginBottom: '20px',
-            }}
-          >
-            <h4>{isEdit ? "Blog Post Successfully Updated!" : "Blog Post Successfully Submitted!"}</h4>
-            <p>
-              {isEdit
-                ? "Your blog post has been successfully updated. You can edit or cancel it at any time."
-                : "Your blog post has been successfully created. You can edit or cancel it at any time."}
-            </p>
-          </div>
-        </ModalBody>
-        <ModalFooter>
-          {isEdit ? (
-            <button
-              onClick={handleSaveEdit} 
-              style={{
-                backgroundColor: '#4CAF50',
-                color: 'white',
-                width: '20%',
-                margin: '10px 20px',
-                padding: '12px 20px',
-                fontSize: '18px',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: 'pointer',
-              }}
-            >
-              Save Changes
-            </button>
-          ) : (
-            <button
-              onClick={handleSubmit}  // Call handleSubmit when creating a new blog
-              style={{
-                backgroundColor: '#4CAF50',
-                color: 'white',
-                width: '20%',
-                margin: '10px 20px',
-                padding: '12px 20px',
-                fontSize: '18px',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: 'pointer',
-              }}
-            >
-              Save
-            </button>
-          )}
-          <button
-            onClick={() => setShowModal(false)}
-            style={{
-              backgroundColor: 'gray',
-              width: '20%',
-              color: 'white',
-              margin: '10px 20px',
-              padding: '12px 20px',
-              fontSize: '18px',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-            }}
-          >
-            Cancel
-          </button>
-        </ModalFooter>
-      </Modal> */}
     </div>
   );
 }

@@ -3,12 +3,13 @@ const express = require("express");
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
-const authRoute = require('./router/auth-router');
+// const slugify = require('slugify');
+const AdminRoute = require('./router/admin-router');
 const ContactRoute = require ('./router/contact-router')
 const GetaQuoteRoute = require ('./router/getquote-router')
 const EnquieryFormRoute = require('./router/enquiery-router')
 const BlogRoute = require('./router/blog-router')
-const AdminRoutes= require('./router/admin-router')
+const JobformRoute= require('./router/jobform-router')
 const connectdb = require('./utils/db')
 const path = require('path')
 
@@ -19,11 +20,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api',GetaQuoteRoute);
-app.use('/api/auth', authRoute);
 app.use('/api/form',ContactRoute);
 app.use('/api/post',BlogRoute);
-// app.use('/api/admin',AdminRoutes)
+app.use('/api/job',JobformRoute)
 app.use('/form',EnquieryFormRoute);
+app.use('/api/auth', AdminRoute);
 app.use('/uploads', express.static('uploads'));
 
 const PORT =process.env.PORT || 5000;
