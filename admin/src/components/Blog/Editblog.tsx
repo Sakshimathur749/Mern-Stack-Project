@@ -3,7 +3,7 @@ import 'quill/dist/quill.snow.css';
 import Quill from 'quill';
 import { useParams, useNavigate} from 'react-router-dom';
 import './Blog.css';
-
+import{ API_URL,IMAGE_URL }from '../../url.ts'
 interface QuillEditorDiv extends HTMLDivElement {
   __quill?: Quill;
 }
@@ -35,7 +35,7 @@ const EditBlog = () => {
   
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/post/blog/${id}`, {
+        const response = await fetch(`${API_URL}/api/post/blog/${id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const EditBlog = () => {
         const data = await response.json();
         setBlog({
           ...data,
-          imageUrl: data.imageUrl ? `http://localhost:5173/src/images${data.imageUrl}` : '',
+          imageUrl: data.imageUrl ? `${IMAGE_URL }/src/images${data.imageUrl}` : '',
         });
       } catch (error: any) {
         setError(error.message || 'Something went wrong');
@@ -82,7 +82,7 @@ const EditBlog = () => {
       formData.append('imageUrl', blog.imageUrl);
     }
     try {
-      const response = await fetch(`http://localhost:5000/api/post/blog/${id}`, {
+      const response = await fetch(`${API_URL}/api/post/blog/${id}`, {
         method: 'PUT',
         body: formData,
       });

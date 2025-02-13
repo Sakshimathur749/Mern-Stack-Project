@@ -3,7 +3,7 @@ import 'quill/dist/quill.snow.css';
 import './Blog.css';
 import { blog } from '../../types/blog';
 import { useNavigate } from 'react-router-dom';
-
+import{ API_URL }from '../../url.ts'
 const PostedBlog = () => {
   const [blogs, setBlogs] = useState<blog[]>([]); 
   const [error, setError] = useState<string | null>(null);
@@ -15,7 +15,7 @@ const PostedBlog = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/post/blog', {
+        const response = await fetch(`${API_URL}/api/post/blog`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const PostedBlog = () => {
   const handleDelete = async () => {
     if (selectedBlogId) {
       try {
-        const response = await fetch(`http://localhost:5000/api/post/blog/${selectedBlogId}`, {
+        const response = await fetch(`${API_URL}/api/post/blog/${selectedBlogId}`, {
           method: 'DELETE',
         });
 

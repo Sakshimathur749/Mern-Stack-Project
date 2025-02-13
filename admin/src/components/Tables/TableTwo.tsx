@@ -5,7 +5,7 @@ import DT from 'datatables.net-dt';
 import 'datatables.net-select-dt';
 import '../Blog/Blog.css'
 DataTable.use(DT);
-
+import{ API_URL }from '../../url.ts'
 const TableTwo = () => {
   const [productData, setProductData] = useState<Product[]>([]);
   const [message, setMessage] = useState<{ type: string, text: string } | null>(null); 
@@ -13,7 +13,7 @@ const TableTwo = () => {
     useEffect(() => {
       const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/getaquote", {
+        const response = await fetch(`${API_URL}/api/getaquote`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",

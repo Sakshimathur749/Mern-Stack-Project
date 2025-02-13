@@ -4,7 +4,7 @@ import '../App.css'
 import Icon1 from '../assets/Icon/icon-phone.png'
 import Icon2 from '../assets/Icon/icon-email.png'
 import Icon3 from '../assets/Icon/icon-location.png'
-
+import {API_URL} from  '../../../admin/src/url'
 const ContactUs = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
@@ -49,7 +49,7 @@ const ContactUs = () => {
     e.preventDefault();
     if(validateForm()){
       try {
-        const response = await fetch("http://localhost:5000/api/form/contact", {
+        const response = await fetch(`${API_URL}/api/form/contact`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

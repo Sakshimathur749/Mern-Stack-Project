@@ -1,7 +1,8 @@
-const API_URL = 'http://localhost:5000/api/auth';
+import{ API_URL }from '../url.ts'
+const AUTH_URL = `${API_URL}/api/auth`;
 
 export const login = async (email: string, password: string): Promise<any> => {
-  const response = await fetch(`${API_URL}/login`, {
+  const response = await fetch(`${AUTH_URL}/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ import DT from 'datatables.net-dt';
 import 'datatables.net-select-dt';
 import '../Blog/Blog.css'
 DataTable.use(DT);
-
+import{ API_URL }from '../../url.ts'
 const TableThree = () => {
   const [packageData, setPackageData] = useState<Package[]>([]);
    const [error, setError] = useState<string | null>(null);
@@ -13,7 +13,7 @@ const TableThree = () => {
       useEffect(() => {
         const fetchData = async () => {
         try {
-          const response = await fetch("http://localhost:5000/form/equieryform", {
+          const response = await fetch(`${API_URL}/form/equieryform`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",

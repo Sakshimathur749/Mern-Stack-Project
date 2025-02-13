@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../index-CNfx030l.css";
 import { Link } from "react-router-dom";
 import './MediaQuerie.css'
-
+import {API_URL, IMAGE_URL} from  '../../../admin/src/url'
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true); 
@@ -11,7 +11,7 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/post/blog'); 
+        const response = await fetch(`${API_URL}/api/post/blog`); 
         if (!response.ok) {
           throw new Error('Failed to fetch blogs');
         }
@@ -53,7 +53,7 @@ const Blogs = () => {
             <div className="col-lg-6" key={blog.slug}>
               <div className="blog2-box">
                 <div className="image">
-                <img src={`http://localhost:5173/src/images${blog.imageUrl}` || "default-image.jpg"} alt={blog.title} />
+                <img src={`${IMAGE_URL}/images${blog.imageUrl}` || "default-image.jpg"} alt={blog.title} />
                 </div>
 
                 <div className="heading1 ">

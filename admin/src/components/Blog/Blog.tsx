@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import 'quill/dist/quill.snow.css'; 
 import Quill from 'quill';
 import './Blog.css';
+import{ API_URL }from '../../url.ts'
 const Blog: React.FC = () => {
     const [title, setTitle] = useState<string>('');
     const [category, setCategory] = useState<string>('');
@@ -49,18 +50,18 @@ const Blog: React.FC = () => {
     const generateSlug = (title: string) => {
       return title
         .toLowerCase()
-        .replace(/[^\w\s-]/g, '')  // Remove non-alphanumeric characters
-        .replace(/\s+/g, '-')       // Replace spaces with hyphens
-        .replace(/-+/g, '-');       // Replace multiple hyphens with one
+        .replace(/[^\w\s-]/g, '')  
+        .replace(/\s+/g, '-')      
+        .replace(/-+/g, '-');      
     };
   
     const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setTitle(e.target.value);
-      setSlug(generateSlug(e.target.value));  // Auto-generate slug from title
+      setSlug(generateSlug(e.target.value));  
     };
   
     const handleSlugChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setSlug(e.target.value);  // Allow manual slug input
+      setSlug(e.target.value); 
     };
     const handleImageChange = (e:any) => {
       const file = e.target.files[0];
@@ -82,11 +83,10 @@ const Blog: React.FC = () => {
       dataTosend.append('slug', slug);  
       try {
         const endpoint = editingBlogId
-          ? `http://localhost:5000/api/post/blog/${editingBlogId}`
-          : 'http://localhost:5000/api/post/blog';
+          ? `${API_URL}/api/post/blog/${editingBlogId}`
+          : `${API_URL}/api/post/blog`;
     
         const method = editingBlogId ? 'PUT' : 'POST';
-    
         const response = await fetch(endpoint, {
           method: method,
           body: dataTosend,

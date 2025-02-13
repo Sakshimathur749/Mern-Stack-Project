@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "../index-CNfx030l.css";
 import { Container,Row,Col } from 'react-bootstrap'
-
+import {API_URL} from  '../../../admin/src/url'
 const Newsletter = () => {
     const [successMessage, setSuccessMessage] = useState("");
     const [errors, setErrors] = useState({});
@@ -38,7 +38,7 @@ const Newsletter = () => {
       e.preventDefault();
       if(validateForm()){
         try {
-          const response = await fetch("http://localhost:5000/api/getaquote", {
+          const response = await fetch(`${API_URL}/api/getaquote`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

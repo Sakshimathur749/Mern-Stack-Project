@@ -3,7 +3,7 @@ import "../index-CNfx030l.css";
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Modal from 'react-bootstrap/Modal';
-
+import {API_URL} from  '../../../admin/src/url'
 function EnquiryForm() {
   const [showModal, setShowModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -45,7 +45,7 @@ function EnquiryForm() {
     event.preventDefault();
     if(validateField()){
       try {
-        const response = await fetch("http://localhost:5000/form/equieryform", {
+        const response = await fetch(`${API_URL}/form/equieryform`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

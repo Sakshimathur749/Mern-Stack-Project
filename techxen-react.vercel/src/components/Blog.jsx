@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../index-CNfx030l.css";
-
-
+import {API_URL,IMAGE_URL} from  '../../../admin/src/url'
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/post/blog'); 
+        const response = await fetch(`${API_URL}/api/post/blog`); 
         if (!response.ok) {
           throw new Error('Failed to fetch blogs');
         }
@@ -53,7 +52,7 @@ const Blog = () => {
                 >
                   <div className="image image-anime">
                     <img
-                      src={`http://localhost:5173/src/images${blog.imageUrl}`} 
+                      src={`${IMAGE_URL}/src/images${blog.imageUrl}`} 
                       alt={blog.title}
                     />
                   </div>

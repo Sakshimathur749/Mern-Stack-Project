@@ -2,7 +2,7 @@ import React, { useEffect,useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../index-CNfx030l.css";
 import "../App.css"
-
+import {API_URL,IMAGE_URL} from  '../../../admin/src/url'
 const AllBlogsDetails = () => {
   const { slug } = useParams();
   const [blogData, setBlogData] = useState(null);
@@ -14,7 +14,7 @@ const AllBlogsDetails = () => {
     const fetchBlogData = async () => {
       try {
         setLoading(true); 
-        const response = await fetch(`http://localhost:5000/api/post/blog/${slug}`, {
+        const response = await fetch(`${API_URL}/api/post/blog/${slug}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const AllBlogsDetails = () => {
   useEffect(() => {
     const fetchAllBlogs = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/post/blog'); 
+        const response = await fetch(`${API_URL}/api/post/blog`); 
         if (!response.ok) {
           throw new Error('Failed to fetch all blogs');
         }
@@ -85,7 +85,7 @@ const AllBlogsDetails = () => {
                   <div className="details-post-area">
                     <div className="image">
                       <img
-                        src={`http://localhost:5173/src/images${blogData.imageUrl}` || '/path/to/default-image.jpg'} 
+                        src={`${IMAGE_URL}/src/images${blogData.imageUrl}` || '/path/to/default-image.jpg'} 
                         alt={blogData.title}
                       />
                     </div>
@@ -146,7 +146,7 @@ const AllBlogsDetails = () => {
                     <div className="sidebar-blogs">
                       <div className="image">
                         <img
-                          src={`http://localhost:5173/src/images${blog.imageUrl || "/assets/img/blog/blog-details-sidebar1.png"}`} // Replace with blog image or fallback image
+                          src={`${IMAGE_URL}/src/images${blog.imageUrl || "/assets/img/blog/blog-details-sidebar1.png"}`} // Replace with blog image or fallback image
                           alt={blog.title}
                         />
                       </div>

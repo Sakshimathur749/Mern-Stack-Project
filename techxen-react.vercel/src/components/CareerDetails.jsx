@@ -2,6 +2,7 @@ import React, {  useState } from "react";
 import "../index-CNfx030l.css";
 import { Button, Container, Form, Modal, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import {API_URL} from  '../../../admin/src/url'
 const CareerDetails = () => {
   const [showModal, setShowModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -63,7 +64,7 @@ const CareerDetails = () => {
       formDataToSend.append("phone", formData.phone);
       formDataToSend.append("resume", formData.resume);
     try {
-      const response = await fetch("http://localhost:5000/api/job/apply", {
+      const response = await fetch(`${API_URL}/api/job/apply`, {
         method: "POST",
         body: formDataToSend,
       });
