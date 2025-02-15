@@ -1,6 +1,6 @@
 import React from "react";
 import "../index-CNfx030l.css";
-
+import Icon from '../assets/icon.png'
 const Commonhero = ({name}) => {
   return (
     <div className="common-hero">
@@ -11,7 +11,7 @@ const Commonhero = ({name}) => {
               <h1>{name}</h1>
               <div className="space16"></div>
               <span className="span">
-                <img src="https://techxen-react.vercel.app/assets/img/icons/span1.png" alt="" />{" "}
+                <img src={Icon} alt="" />{" "}
                 <a href="/">Home</a>
                 <span className="arrow">
                   <i className="bi bi-chevron-right"></i>

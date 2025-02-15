@@ -3,6 +3,7 @@ import "../index-CNfx030l.css";
 import Icon1 from '../assets/Icon/icon-network.png'
 import Icon2 from '../assets/Icon/icon-it-service.png'
 import Image from '../assets/Image8.png'
+import Icon from '../assets/icon.png'
 const OurVision = () => {
   return (
     <div className="solution about-solution sp">
@@ -26,12 +27,12 @@ const OurVision = () => {
             <div className="heading1">
               <span className="span">
                 <img
-                  src="https://techxen-react.vercel.app/assets/img/icons/span1.png"
+                  src={Icon}
                   alt=""
                 />{" "}
                 Our Vision
               </span>
-              <h2>Driving Innovation: Our Vision at TechXen</h2>
+              <h2>Driving Innovation: Our Vision at Devexa</h2>
               <div className="space16"></div>
               <p>
                 At Devexa, our vision is to be the leading force driving

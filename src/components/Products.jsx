@@ -2,7 +2,7 @@ import React from 'react'
 import "../index-CNfx030l.css";
 import Image1 from '../assets/Icon/icon-DigitalCard.png'
 import Image2 from '../assets/Icon/icon-system-information.png'
-
+import Icon from '../assets/icon.png'
 const Products = () => {
   return (
     <div className="service sp " style={{backgroundColor:'#ffff'}}>
@@ -13,7 +13,7 @@ const Products = () => {
               <div>
                 <span className="span">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/span1.png"
+                    src={Icon}
                     alt=""
                   />{" "}
                   Our Projects

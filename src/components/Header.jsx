@@ -31,7 +31,7 @@ function Header() {
             />
           </Navbar.Brand>
           <Nav
-            className="my-2 my-lg-0 navbar-nav gap-5"
+            className="my-2 my-lg-0 navbar-nav gap-4"
             style={{ maxHeight: "100px", left: "340px" }}
           >
             <div className="nav-link" onClick={() => window.location.reload()}>

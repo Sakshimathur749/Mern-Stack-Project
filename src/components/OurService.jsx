@@ -4,7 +4,7 @@ import "../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import Image1 from '../assets/Image6.png'
-
+import Icon from '../assets/icon.png'
 const OurService = () => {
   return (
     <div className="about2 about-page-sec sp">
@@ -28,7 +28,7 @@ const OurService = () => {
                 data-aos-duration="700"
               >
                 <img
-                  src="https://techxen-react.vercel.app/assets/img/icons/span1.png"
+                  src={Icon}
                   alt=""
                 />{" "}
                 Our Service

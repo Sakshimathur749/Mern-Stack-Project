@@ -39,22 +39,22 @@ const Team = () => {
                 <div className="icon-area">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-linkedin"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-youtube"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-instagram"></i>
                       </a>
                     </li>
@@ -64,7 +64,7 @@ const Team = () => {
               <div className="space30"></div>
               <div className="heading3">
                 <h4>
-                  <a href="#">John Doe</a>
+                  <a >John Doe</a>
                 </h4>
                 <p>CEO &amp; Founder</p>
               </div>
@@ -86,22 +86,22 @@ const Team = () => {
                 <div className="icon-area">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-linkedin"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-youtube"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-instagram"></i>
                       </a>
                     </li>
@@ -111,7 +111,7 @@ const Team = () => {
               <div className="space30"></div>
               <div className="heading3">
                 <h4>
-                  <a href="#">Jane Smith</a>
+                  <a >Jane Smith</a>
                 </h4>
                 <p>Chef Technology Officer</p>
               </div>
@@ -133,22 +133,22 @@ const Team = () => {
                 <div className="icon-area">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-linkedin"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-youtube"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-instagram"></i>
                       </a>
                     </li>
@@ -158,7 +158,7 @@ const Team = () => {
               <div className="space30"></div>
               <div className="heading3">
                 <h4>
-                  <a href="#">Sarah Thompson</a>
+                  <a >Sarah Thompson</a>
                 </h4>
                 <p>Head of Project Management</p>
               </div>
@@ -180,22 +180,22 @@ const Team = () => {
                 <div className="icon-area">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-linkedin"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-youtube"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a >
                         <i className="bi bi-instagram"></i>
                       </a>
                     </li>
@@ -205,7 +205,7 @@ const Team = () => {
               <div className="space30"></div>
               <div className="heading3">
                 <h4>
-                  <a href="#">David Garcia</a>
+                  <a >David Garcia</a>
                 </h4>
                 <p>Lead Software Engineer</p>
               </div>

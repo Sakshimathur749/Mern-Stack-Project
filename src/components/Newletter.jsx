@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import "../index-CNfx030l.css";
-import { Container,Row,Col } from 'react-bootstrap'
+import { Container,Row,Col, Modal } from 'react-bootstrap'
 import {API_URL} from  '../../admin/src/url'
 const Newsletter = () => {
-    const [successMessage, setSuccessMessage] = useState("");
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const [submissionStatus, setSubmissionStatus] = useState(null); 
     const [errors, setErrors] = useState({});
     const [contact, setContact] = useState({
       firstname:"",
@@ -17,6 +18,9 @@ const Newsletter = () => {
       setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
     setSuccessMessage(""); 
     }
+    const handleCloseSuccessModal = () => {
+      setShowSuccessModal(false);
+    };
     const validateForm = () => {
       const newErrors = {};
       const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -49,7 +53,6 @@ const Newsletter = () => {
           const data = await response.json();
     
           if (response.ok) {
-            console.log("Form submitted successfully:", data);
             setContact({
               firstname: "",
               lastname: "",
@@ -58,13 +61,17 @@ const Newsletter = () => {
               subject: "",
               message: "",
             });
-            setSuccessMessage("Form submitted successfully!"); 
+            setShowSuccessModal(true);
+            setSubmissionStatus("success");
           } else {
             console.error("Form submission failed:", data);
+            setShowSuccessModal(true);
+            setSubmissionStatus("error");
           }
         } catch (error) {
           console.error("Error submitting form:", error);
-          setSuccessMessage(""); 
+          setSuccessMessage("");
+          setSubmissionStatus("error"); 
         }
       }
   
@@ -161,11 +168,29 @@ const Newsletter = () => {
                   </div>
                 </div>
               </form>
-              {successMessage && (
-                <div className='text-success mt-3'>
-                  <p>{successMessage}</p>
-                </div>
-              )}
+              <Modal
+        show={showSuccessModal}
+        onHide={handleCloseSuccessModal}
+        centered
+      >
+        <Modal.Body className="rounded-3">
+        <div className='text-center mt-3' >
+        {submissionStatus=="success"  ?(<><svg xmlns="http://www.w3.org/2000/svg" height={50} width={50} className='mb-2' viewBox="0 0 512 512"><path fill="#1f9217" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+        <h2 className='fw-semibold'> Success</h2>
+        <p className='fw-semibold py-2' >Your enquiry has been submitted successfully!</p>
+        <p>Thank you for reaching out. We will get back to you shortly.</p>
+        </>):(<>
+                <svg xmlns="http://www.w3.org/2000/svg" height={50} width={50} className='mb-2' viewBox="0 0 512 512"><path fill="#d01616" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+                <h2 className='fw-semibold'>OOps! Something Went Wrong</h2>
+                <p className='fw-semibold py-2'>There was an issue submitting your enquiry.</p>
+                <p>Please try again later.</p>
+              </>)}
+        </div>
+        </Modal.Body>
+        <Modal.Footer className='border-0 py-3'  >
+          {submissionStatus=="success"?(<><button className="theme-btn1 w-100 mx-3" style={{backgroundColor:'#1f9217'}} onClick={handleCloseSuccessModal}>Close</button></>):(<><button className="theme-btn1 w-100 mx-3" style={{backgroundColor:'#d01616'}} onClick={handleCloseSuccessModal}>Close</button></>)}
+        </Modal.Footer>
+      </Modal>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "../index-CNfx030l.css";
 import Image from '../assets/Image7.png'
-
+import Icon from '../assets/icon.png'
 const OurMission = () => {
   return (
     <div className="solution sp bg1">
@@ -11,7 +11,7 @@ const OurMission = () => {
             <div className="heading1">
               <span className="span">
                 <img
-                  src="https://techxen-react.vercel.app/assets/img/icons/span1.png"
+                  src={Icon}
                   alt=""
                 />{" "}
                 Our Mission

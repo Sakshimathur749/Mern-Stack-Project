@@ -17,7 +17,7 @@ const Main = () => {
     >
       <Container>
         <Row>
-          <Col xs="5" style={{ alignSelf: "center" }}>
+          <Col xs="5" className="align-self-center">
             <div className="main-headding">
               <span
                 className="span"

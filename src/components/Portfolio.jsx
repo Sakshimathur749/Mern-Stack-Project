@@ -1,7 +1,7 @@
 import React from 'react'
 import "../index-CNfx030l.css";
 import { Link } from 'react-router-dom';
-
+import Icon from '../assets/icon.png'
 const Products = () => {
   return (
     <div className="work4 sp">
@@ -12,7 +12,7 @@ const Products = () => {
               <div>
               <span className="span">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/span1.png"
+                    src={Icon}
                     alt=""
                   />{" "}
                   Our Success

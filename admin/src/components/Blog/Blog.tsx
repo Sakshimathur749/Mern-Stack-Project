@@ -129,7 +129,7 @@ const Blog: React.FC = () => {
 
   return (
     <div
-      className="blog-upload-page"
+      className="blog-upload-page blog"
       style={{
         width: '60%',
         margin: '0 auto',

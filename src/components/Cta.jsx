@@ -9,7 +9,7 @@ const Cta = () => {
       <Row className='align-items-center'>
         <Col lg='7' >
         <div className="heading1-w">
-            <h2 className="title tg-element-title">At TechXen IT Solutions, We are Committed To Businesses</h2>
+            <h2 className="title tg-element-title">At Devexa IT Solutions, We are Committed To Businesses</h2>
             <div style={{height:'16px'}}></div>
             <p data-aos="fade-right" data-aos-duration="700">Take the first step towards achieving your business goals by contacting us today. Schedule a consultation with one of our IT specialists to discuss your objectives and explore how our innovative solutions can propel.</p>
         </div>

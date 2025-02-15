@@ -4,7 +4,7 @@ import HistoryImage from '../assets/History.png'
 import { Col, Container, Row } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-
+import Icon from '../assets/icon.png'
 const History = () => {
   return (
     <div className="solution about-solution ">
@@ -15,7 +15,7 @@ const History = () => {
             <div className="heading1">
               <span className="span">
                 <img
-                  src="https://techxen-react.vercel.app/assets/img/icons/span1.png"
+                  src={Icon}
                   alt=""
                 />{" "}
                 About Us

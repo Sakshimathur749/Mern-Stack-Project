@@ -32,7 +32,7 @@ const Testimonials = () => {
           </div>
         </div>
         <div className="row _relative">
-          <div className="tes1-slider" style={{marginTop:'10px'}}>
+          <div className="tes1-slider mt-2">
           <Carousel  activeIndex={index} nextIcon={true} onSelect={handleSelect}>
           <Carousel.Item  >
             <div className="tes1-single-slider">

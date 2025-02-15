@@ -21,7 +21,7 @@ const Ourcompany = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col xs="6" style={{paddingRight:'0px'}}>
+                    <Col xs="6" className='pr-0'>
                        <div className="heading1">
                        <span
                             className="span"

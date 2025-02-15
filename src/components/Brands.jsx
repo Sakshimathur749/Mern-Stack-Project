@@ -132,8 +132,7 @@ const Brands = () => {
                   </SwiperSlide>
                 </Swiper>
                 <div
-                  className="custom-pagination"
-                  style={{ padding: "15px 0px" ,textAlign:'center' }}
+                  className="custom-pagination text-center py-2"
                 ></div>
               </div>
             </div>

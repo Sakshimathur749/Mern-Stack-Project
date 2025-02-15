@@ -13,7 +13,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { Pagination , Autoplay , Navigation} from 'swiper/modules';
-
+import Icon from '../assets/icon.png'
 const DigitalCard = () => {
     const [showPricing, setShowPricing] = useState(true);
     const togglePricing = () => {
@@ -35,7 +35,7 @@ const DigitalCard = () => {
                   data-aos-duration="700"
                 >
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/span1.png"
+                    src={Icon}
                     alt=""
                   />
                   Digital card Service
@@ -148,7 +148,7 @@ const DigitalCard = () => {
                 <div>
                   <span className="span">
                     <img
-                      src="https://techxen-react.vercel.app/assets/img/icons/span1.png"
+                      src={Icon}
                       alt=""
                     />{" "}
                     Our Pricing Plan

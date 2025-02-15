@@ -1,7 +1,9 @@
 import React, {  useState } from "react";
 import "../index-CNfx030l.css";
+import "../App.css";
 import { Button, Container, Form, Modal, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Icon from '../assets/Devexalogo.png'
 import {API_URL} from  '../../admin/src/url'
 const CareerDetails = () => {
   const [showModal, setShowModal] = useState(false);
@@ -130,7 +132,7 @@ const CareerDetails = () => {
                     }}
                   >
                     <img
-                      src="https://techxen-react.vercel.app/assets/img/logo/header-logo1.png"
+                      src={Icon}
                       alt=""
                     />
                   </div>
@@ -140,79 +142,24 @@ const CareerDetails = () => {
                     </Link>
                   </a>
                   <div className="heading1">
-                    <h4 style={{ textAlign: "center" }}>
+                    <h4 className="text-center">
                       <a href="/service/Web-Development">Web Developnment</a>
                     </h4>
                     <div className="space16"></div>
-                    <p style={{ textAlign: "center" }}>
+                    <p className="text-center">
                       Job Type: Full Time <br /> Opening Date : 18-12-24
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            {/* <div className="col-lg-4 col-md-6">
-              <Link to='/service/App-Development'>
-              <div className="">
-                <div className="servcie2-box">
-                  <div className="icon" style={{margin: '10px auto',justifyItems:'center',alignContent:'center',width: '70px',height:'60px',backgroundColor: 'white',padding:'4px'}}>
-                    <img
-                      src="https://techxen-react.vercel.app/assets/img/logo/header-logo1.png"
-                      alt="" 
-                    />
-                  </div>
-                  <a className="arrow">
-                    <Link to="/service/App-Development">
-                      <i className="bi bi-arrow-right"></i>
-                    </Link>
-                  </a>
-                  <div className="heading1">
-                    <h4 style={{textAlign:'center'}}>
-                      <a href="/service/App-Development">App Developnment</a>
-                    </h4>
-                    <div className="space16"></div>
-                    <p style={{textAlign:'center'}}>
-                      Job Type: Full Time <br/> Opening Date : 18-12-24
-                    </p>
-                  </div>
-                </div>
-              </div></Link>
-              
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <Link to='/service/SEO'>
-              <div className="">
-                <div className="servcie2-box">
-                  <div className="icon" style={{margin: '10px auto',justifyItems:'center',alignContent:'center',width: '70px',height:'60px',backgroundColor: 'white',padding:'4px'}}>
-                    <img
-                      src="https://techxen-react.vercel.app/assets/img/logo/header-logo1.png"
-                      alt="" 
-                    />
-                  </div>
-                  <a className="arrow">
-                    <Link to="/service/SEO">
-                      <i className="bi bi-arrow-right"></i>
-                    </Link>
-                  </a>
-                  <div className="heading1">
-                    <h4 style={{textAlign:'center'}}>
-                      <a href="/service/SEO">SEO</a>
-                    </h4>
-                    <div className="space16"></div>
-                    <p style={{textAlign:'center'}}>
-                      Job Type: Full Time <br/> Opening Date : 18-12-24
-                    </p>
-                  </div>
-                </div>
-              </div></Link>
-            </div> */}
           </div>
         </div>
       </Container>
       <Modal
         show={showModal}
-        onHide={handleModalClose}
-        style={{ height: "100vh", alignContent: "center" }}
+        onHide={handleModalClose} className="align-content-center"
+        style={{ height: "100vh" }}
       >
         <Modal.Header closeButton>
           <Modal.Title> Job Application</Modal.Title>
@@ -227,7 +174,7 @@ const CareerDetails = () => {
                     <div className="col-lg-12">
                       <div className="single-input">
                         {error.name && (
-                          <p style={{ color: "red", fontSize: "14px" }}>
+                          <p className="text-danger fs14" >
                             {error.name}
                           </p>
                         )}
@@ -244,7 +191,7 @@ const CareerDetails = () => {
                     <div className="col-lg-12">
                       <div className="single-input">
                         {error.phone && (
-                          <p style={{ color: "red", fontSize: "14px" }}>
+                          <p className="text-danger fs14">
                             {error.phone}
                           </p>
                         )}
@@ -261,7 +208,7 @@ const CareerDetails = () => {
                     <div className="col-lg-12">
                       <div className="single-input">
                         {error.email && (
-                          <p style={{ color: "red", fontSize: "14px" }}>
+                          <p className="text-danger fs14">
                             {error.email}
                           </p>
                         )}
@@ -278,7 +225,7 @@ const CareerDetails = () => {
                     <div className="col-lg-12">
                       <div className="single-input">
                         {error.phone && (
-                          <p style={{ color: "red", fontSize: "14px" }}>
+                          <p className="text-danger fs14">
                             {error.phone}
                           </p>
                         )}
@@ -295,7 +242,7 @@ const CareerDetails = () => {
               </div>
             </div>
           </Row>
-          <Modal.Footer style={{ borderTop: "none", padding: "20px 10px" }}>
+          <Modal.Footer className="border-0 py-4 px-2" >
             <div className="col-lg-6">
               <button className="theme-btn1" onClick={handleModalClose}>
                 Close{" "}
@@ -311,14 +258,13 @@ const CareerDetails = () => {
 
       <Modal show={showSuccessModal} onHide={handleCloseSuccessModal} centered>
         <Modal.Body style={{ borderRadius: "30px" }}>
-          <div style={{ textAlign: "center", marginTop: "20px" }}>
+          <div className="text-center mt-3">
             {submissionStatus == "success" ? (
               <>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height={50}
-                  width={50}
-                  style={{ marginBottom: "15px" }}
+                  width={50} className="mb-2"
                   viewBox="0 0 512 512"
                 >
                   <path
@@ -326,8 +272,8 @@ const CareerDetails = () => {
                     d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
                   />
                 </svg>
-                <h2 style={{ fontWeight: "600" }}> Success</h2>
-                <p style={{ fontWeight: "600", padding: "10px 0px" }}>
+                <h2 className="fw-semibold"> Success</h2>
+                <p className="fw-semibold py-2" >
                   Your enquiry has been submitted successfully!
                 </p>
                 <p>
@@ -339,8 +285,7 @@ const CareerDetails = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height={50}
-                  width={50}
-                  style={{ marginBottom: "15px" }}
+                  width={50} className="mb-2"
                   viewBox="0 0 512 512"
                 >
                   <path
@@ -348,10 +293,10 @@ const CareerDetails = () => {
                     d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
                   />
                 </svg>
-                <h2 style={{ fontWeight: "600" }}>
+                <h2 className="fw-semibold">
                   OOps! Something Went Wrong
                 </h2>
-                <p style={{ fontWeight: "600", padding: "10px 0px" }}>
+                <p className="fw-semibold py-2">
                   There was an issue submitting your enquiry.
                 </p>
                 <p>Please try again later.</p>
@@ -359,7 +304,7 @@ const CareerDetails = () => {
             )}
           </div>
         </Modal.Body>
-        <Modal.Footer style={{ border: "none", padding: "20px 0px" }}>
+        <Modal.Footer className="border-0 py-4">
           {submissionStatus == "success" ? (
             <>
               <button

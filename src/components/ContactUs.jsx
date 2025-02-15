@@ -5,11 +5,10 @@ import Icon1 from '../assets/Icon/icon-phone.png'
 import Icon2 from '../assets/Icon/icon-email.png'
 import Icon3 from '../assets/Icon/icon-location.png'
 import {API_URL} from  '../../admin/src/url'
+import { Modal } from "react-bootstrap";
 const ContactUs = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const [showErrorModal, setShowErrorModal] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+    const [submissionStatus, setSubmissionStatus] = useState(null); 
   const [errors, setErrors] = useState({});
   const [contact, setContact] = useState({
     firstname:"",
@@ -69,25 +68,23 @@ const ContactUs = () => {
             subject: "",
             message: "",
           });
-          setSuccessMessage("Form submitted successfully!");
           setShowSuccessModal(true);
+          setSubmissionStatus("success");
         } else {
           console.error("Form submission failed:", data);
-          setErrorMessage("Form submission failed. Please try again.");
-          setShowErrorModal(true);
+          setShowSuccessModal(true);
+          setSubmissionStatus("error");
         }
       } catch (error) {
         console.error("Error submitting form:", error);
-        setErrorMessage("An error occurred while submitting the form.");
-        setShowErrorModal(true);
+        setShowSuccessModal(true);
+            setSubmissionStatus("error");
       }
     }
   }
-  const closeModal = () => {
+  const handleCloseSuccessModal = () => {
     setShowSuccessModal(false);
-    setShowErrorModal(false);
   };
-
   return (
     <div className="contact-page ">
       <div className="space50"></div>
@@ -126,8 +123,8 @@ const ContactUs = () => {
                 </div>
                 <div className="heading">
                   <h5>Send Us a Mail</h5>
-                  <a href="mailto:admin@techxen.org " className="text">
-                    admin@techxen.org{" "}
+                  <a href="mailto:info@devexa.solutions " className="text">
+                    info@devexa.solutions{" "}
                   </a>
                 </div>
               </div>
@@ -234,35 +231,34 @@ const ContactUs = () => {
                   </div>
                 </div>
               </form>
-              {successMessage && (
-                <div className="mt-3 text-success" >
-                  <p>{successMessage}</p>
-                </div>
-              )}
+              <Modal
+        show={showSuccessModal}
+        onHide={handleCloseSuccessModal}
+        centered
+      >
+        <Modal.Body className="rounded-3">
+        <div className='text-center mt-3' >
+        {submissionStatus=="success"  ?(<><svg xmlns="http://www.w3.org/2000/svg" height={50} width={50} className='mb-2' viewBox="0 0 512 512"><path fill="#1f9217" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+        <h2 className='fw-semibold'> Success</h2>
+        <p className='fw-semibold py-2' >Your enquiry has been submitted successfully!</p>
+        <p>Thank you for reaching out. We will get back to you shortly.</p>
+        </>):(<>
+                <svg xmlns="http://www.w3.org/2000/svg" height={50} width={50} className='mb-2' viewBox="0 0 512 512"><path fill="#d01616" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+                <h2 className='fw-semibold'>OOps! Something Went Wrong</h2>
+                <p className='fw-semibold py-2'>There was an issue submitting your enquiry.</p>
+                <p>Please try again later.</p>
+              </>)}
+        </div>
+        </Modal.Body>
+        <Modal.Footer className='border-0 py-3'  >
+          {submissionStatus=="success"?(<><button className="theme-btn1 w-100 mx-3" style={{backgroundColor:'#1f9217'}} onClick={handleCloseSuccessModal}>Close</button></>):(<><button className="theme-btn1 w-100 mx-3" style={{backgroundColor:'#d01616'}} onClick={handleCloseSuccessModal}>Close</button></>)}
+        </Modal.Footer>
+      </Modal>
             </div>
           </div>
         </div>
       </div>
-      {showSuccessModal && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <div className="modal-header">
-              <h2>Success</h2>
-              <button onClick={closeModal} className="close-btn">
-                X
-              </button>
-            </div>
-            <div className="modal-body">
-              <p>{successMessage}</p>
-            </div>
-            <div className="modal-footer">
-              <button onClick={closeModal} className="btn-close">
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+
     </div>
   );
 };

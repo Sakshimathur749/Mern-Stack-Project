@@ -91,11 +91,12 @@ function EnquiryForm() {
     <div>
       <div className="buttons">
         <a
-          className="theme-btn1  position-fixed w-100 mr-2"
+          className="theme-btn1  position-fixed  mr-2 text-center"
           style={{
             top: "350px",
             right: "-60px",
             zIndex: "10",
+            width:'150px',
             transform: 'rotate(270deg)',
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
           }}

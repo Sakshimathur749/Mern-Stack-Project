@@ -2,6 +2,8 @@ import React, { useEffect,useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../index-CNfx030l.css";
 import "../App.css"
+import Calendar from '../assets/Icon/icons-calendar.png'
+import Category from '../assets/Icon/icon-category.png'
 import {API_URL,IMAGE_URL} from  '../../admin/src/url'
 const AllBlogsDetails = () => {
   const { slug } = useParams();
@@ -94,7 +96,7 @@ const AllBlogsDetails = () => {
                         <li>
                           <a href="#">
                             <img
-                              src="https://techxen-react.vercel.app/assets/img/icons/user-icon2.png"
+                              src={Calendar}
                               alt=""
                             />{" "}
                             {new Date(blogData.date).toLocaleDateString()}
@@ -103,7 +105,7 @@ const AllBlogsDetails = () => {
                         <li>
                           <a href="#">
                             <img
-                              src="https://techxen-react.vercel.app/assets/img/icons/user-icon3.png"
+                              src={Category}
                               alt=""
                             />{" "}
                             {blogData.category}
@@ -153,7 +155,7 @@ const AllBlogsDetails = () => {
                       <div className="heading">
                         <a href="#" className="date">
                         <img
-                        src="https://techxen-react.vercel.app/assets/img/icons/date.png"
+                        src={Calendar}
                         alt=""
                       />{" "}
                           {new Date(blog.date).toLocaleDateString()}

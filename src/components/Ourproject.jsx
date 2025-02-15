@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import "../index-CNfx030l.css";
 import "../App.css";
-
+import Icon from '../assets/icon.png'
 const Ourproject = () => {
     let sliderRef = useRef(null);
   const settings = {
@@ -22,7 +22,7 @@ const Ourproject = () => {
               <div>
                 <span className="span">
                   <img
-                    src="https://techxen-react.vercel.app/assets/img/icons/span1.png"
+                    src={Icon}
                     alt=""
                   />{" "}
                   Our Project

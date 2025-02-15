@@ -54,7 +54,7 @@ const AllServices = () => {
               <div className="servcie2-box">
                 <div className="icon">
                   <img
-                    src={Icon2} style={{color:'blue'}}
+                    src={Icon2} className="text-primary"
                     alt=""
                   />
                 </div>

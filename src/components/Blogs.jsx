@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../index-CNfx030l.css";
 import { Link } from "react-router-dom";
 import './MediaQuerie.css'
+import Calendar from '../assets/Icon/icons-calendar.png'
+import Category from '../assets/Icon/icon-category.png'
 import {API_URL, IMAGE_URL} from  '../../admin/src/url'
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -53,21 +55,21 @@ const Blogs = () => {
             <div className="col-lg-6" key={blog.slug}>
               <div className="blog2-box">
                 <div className="image">
-                <img src={`${IMAGE_URL}/images${blog.imageUrl}` || "default-image.jpg"} alt={blog.title} />
+                <img src={`${IMAGE_URL}/src/images${blog.imageUrl}` || "default-image.jpg"} alt={blog.title} />
                 </div>
 
                 <div className="heading1 ">
                   <div className="tags">
                     <a href="/blog-details" className="date">
                       <img
-                        src="https://techxen-react.vercel.app/assets/img/icons/date.png"
+                        src={Calendar}
                         alt=""
                       />{" "}
                       {new Date(blog.date).toLocaleDateString()} 
                     </a>
                     <a href="/blog-details" className="date outhor">
                     <img
-                              src="https://techxen-react.vercel.app/assets/img/icons/user-icon3.png"
+                              src={Category}
                               alt=""
                             />{" "}
                       {blog.category}
