@@ -166,6 +166,7 @@ function EnquiryForm() {
                       </div>
                       <div className="col-lg-12">
                         <div className="single-input">
+                        {errors.message && <p  className='text-danger fs-14'>{errors.message}</p>}
                           <textarea
                             cols="30"
                             rows="5"

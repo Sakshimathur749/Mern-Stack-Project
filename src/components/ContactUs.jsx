@@ -151,6 +151,7 @@ const ContactUs = () => {
                 <div className="row">
                   <div className="col-lg-6">
                     <div className="single-input">
+                    {errors.firstname && <p className='text-danger mt-1'>{errors.firstname}</p>}
                       <input
                         type="text"
                         name="firstname"
@@ -158,48 +159,48 @@ const ContactUs = () => {
                         autoComplete="off"
                         value={contact.firstname} style={errors.firstname ? { borderColor: "red" } : {}}
                         onChange={handleInput}
-                        />{errors.firstname && <p className='text-danger mt-1'>{errors.firstname}</p>}
+                        />
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="single-input">
+                    {errors.lastname && (<p className='text-danger mt-1'>{errors.lastname}</p>)}
                       <input
                         type="text"
                         name="lastname"
                         placeholder="Last Name"
                         value={contact.lastname} style={errors.lastname ? { borderColor: "red" } : {}}
                         onChange={handleInput} 
-                        />{errors.lastname && (<p className='text-danger mt-1'>{errors.lastname}</p>)}
+                        />
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="single-input">
+                    {errors.email && (<p className='text-danger mt-1'>{errors.email}</p>)}
                       <input
                         type="email"
                         name="email"
                         placeholder="Email" style={errors.email ? { borderColor: "red" } : {}}
                         value={contact.email}
                         onChange={handleInput}
-                        /> {errors.email && (
-                          <p className='text-danger mt-1'>{errors.email}</p>
-                        )}
+                        />
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="single-input">
+                    {errors.phone && (<p className='text-danger mt-1'>{errors.phone}</p> )}
                       <input
                         type="number"
                         name="phone"
                         placeholder="Phone"
                         value={contact.phone}  style={errors.phone ? { borderColor: "red" } : {}}
                         onChange={handleInput}
-                        />{errors.phone && (
-                          <p className='text-danger mt-1'>{errors.phone}</p>
-                        )}
+                        />
                     </div>
                   </div>
                   <div className="col-lg-12">
                     <div className="single-input">
+                    {errors.subject && (<p className='text-danger mt-1'>{errors.subject}</p> )}
                       <input
                         type="text"
                         placeholder="Subject"
@@ -211,6 +212,7 @@ const ContactUs = () => {
                   </div>
                   <div className="col-lg-12">
                     <div className="single-input">
+                    {errors.message && (<p className='text-danger mt-1'>{errors.message}</p> )}
                       <textarea
                         cols="30"
                         rows="5"

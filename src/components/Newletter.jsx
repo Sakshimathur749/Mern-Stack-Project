@@ -70,7 +70,7 @@ const Newsletter = () => {
           }
         } catch (error) {
           console.error("Error submitting form:", error);
-          setSuccessMessage("");
+          setShowSuccessModal(true);
           setSubmissionStatus("error"); 
         }
       }
@@ -102,22 +102,25 @@ const Newsletter = () => {
                 <div className="row">
                   <div className="col-lg-6">
                     <div className="single-input">
-                      <input type="text" name="firstname"  placeholder="First Name" autoComplete="off" style={errors.lastname ? { borderColor: "red" } : {}}  value={contact.firstname} onChange={handleInput}/>{errors.firstname && <p className="text-danger mt-2" >{errors.firstname}</p>}
+                    {errors.firstname && <p className="text-danger mt-2" >{errors.firstname}</p>}
+                      <input type="text" name="firstname"  placeholder="First Name" autoComplete="off" style={errors.lastname ? { borderColor: "red" } : {}}  value={contact.firstname} onChange={handleInput}/>
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="single-input">
-                      <input type="email" placeholder="Email" name='email' style={errors.email ? { borderColor: "red" } : {}}
-                        value={contact.email}  onChange={handleInput}/>{errors.email && (
+                    {errors.email && (
                           <p className='text-danger mt-1'>{errors.email}</p>
                         )}
+                      <input type="email" placeholder="Email" name='email' style={errors.email ? { borderColor: "red" } : {}}
+                        value={contact.email}  onChange={handleInput}/>
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="single-input">
-                      <input type="number" placeholder="Phone" name='phone' value={contact.phone}  style={errors.phone ? { borderColor: "red" } : {}} onChange={handleInput}/>{errors.phone && (
+                    {errors.phone && (
                           <p className='text-danger mt-1'>{errors.phone}</p>
                         )}
+                      <input type="number" placeholder="Phone" name='phone' value={contact.phone}  style={errors.phone ? { borderColor: "red" } : {}} onChange={handleInput}/>
                     </div>
                   </div>
                   <div className="col-lg-6">
@@ -151,6 +154,9 @@ const Newsletter = () => {
                   </div>
                   <div className="col-lg-12">
                     <div className="single-input">
+                    {errors.message && (
+                          <p className='text-danger mt-1'>{errors.message}</p>
+                        )}
                       <textarea
                         cols="30"
                         rows="5"

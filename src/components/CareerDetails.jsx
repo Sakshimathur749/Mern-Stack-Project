@@ -49,7 +49,7 @@ const CareerDetails = () => {
       console.error("formData object is undefined");
       return false;
     }
-    if (!formData.name) {newErrors.firstname = "First name is required";} else if (!/^[a-zA-Z]+$/.test(formData.firstname)) {newErrors.firstname = "First name should contain only letters";}
+    if (!formData.name) {newErrors.firstname = "First name is required";} else if (!/^[a-zA-Z]+$/.test(formData.firstname)) {newErrors.firstname = "Name should contain only letters";}
     if (!formData.email) {newErrors.email = "Email is required";} else if (!emailRegex.test(formData.email)) {newErrors.email = "Please provide a valid email address";}
     if (!formData.phone) {newErrors.phone = "Phone number is required";} else if (!phoneRegex.test(formData.phone)) {newErrors.phone = "Phone number should be between 10 ";}
     if (!formData.resume) { newErrors.resume = "Resume is required";} else if (formData.resume && formData.resume.type !== 'application/pdf') {newErrors.resume = "Please upload a valid PDF file.";}
@@ -173,9 +173,9 @@ const CareerDetails = () => {
                   <div className="row">
                     <div className="col-lg-12">
                       <div className="single-input">
-                        {error.name && (
+                        {error.firstname && (
                           <p className="text-danger fs14" >
-                            {error.name}
+                            {error.firstname}
                           </p>
                         )}
                         <input
@@ -224,9 +224,9 @@ const CareerDetails = () => {
                     </div>
                     <div className="col-lg-12">
                       <div className="single-input">
-                        {error.phone && (
+                        {error.resume && (
                           <p className="text-danger fs14">
-                            {error.phone}
+                            {error.resume}
                           </p>
                         )}
                         <input

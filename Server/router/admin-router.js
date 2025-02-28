@@ -5,8 +5,8 @@ const Admin = require('../modals/admin-modal');
 const router = express.Router();
 
 const defaultAdminCredentials = {
-  email: 'mathursakshi143@gmail.com',
-  password: 'admin123',
+  email: 'admin@devexa.com',
+  password: 'Devexa@2025',
 };
 const hashDefaultPassword = async (password) => {
   const salt = await bcrypt.genSalt(10);
